@@ -1,0 +1,26 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/GridLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="2"
+    android:orientation="horizontal"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_column="1"
+        android:layout_gravity="center"
+        android:layout_row="0"
+        android:onClick="onButtonHelp"
+        android:text="AIDE" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="98dp"
+        android:layout_column="1"
+        android:layout_gravity="center_horizontal|top"
+        android:layout_row="0"
+        android:text="MOBAY" />
+
+</GridLayout>
