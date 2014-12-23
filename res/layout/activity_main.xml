@@ -1,6 +1,6 @@
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/GridLayout1"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:columnCount="2"
@@ -8,19 +8,41 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <Button
-        android:id="@+id/button1"
-        android:layout_column="1"
-        android:layout_gravity="center"
-        android:layout_row="0"
+        android:id="@+id/buttonInscription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="161dp"
         android:onClick="onButtonHelp"
-        android:text="AIDE" />
+        android:text="@string/aide" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonInscription"
+        android:layout_alignLeft="@+id/buttonInscription"
+        android:layout_marginBottom="38dp"
+        android:onClick="onButtonInscription"
+        android:text="@string/inscription" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button3"
+        android:layout_alignLeft="@+id/button3"
+        android:layout_marginBottom="30dp"
+        android:text="@string/connexion" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/titleInsciption"
         android:layout_width="98dp"
-        android:layout_column="1"
-        android:layout_gravity="center_horizontal|top"
-        android:layout_row="0"
-        android:text="MOBAY" />
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignRight="@+id/button2"
+        android:layout_marginTop="33dp"
+        android:text="@string/app_name" />
 
-</GridLayout>
+</RelativeLayout>

@@ -1,0 +1,78 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <Space
+        android:id="@+id/Space1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Space
+        android:id="@+id/Space2"
+        android:layout_width="1dp"
+        android:layout_height="15dp" />
+
+    <TextView
+        android:id="@+id/titleInsciption"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/inscription"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Space
+        android:id="@+id/Space3"
+        android:layout_width="1dp"
+        android:layout_height="15dp" />
+
+    <Space
+        android:id="@+id/Space4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <EditText
+        android:id="@+id/inputNumTel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/numTel"
+        android:inputType="phone" >
+
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/inputPseudo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/pseudo" />
+
+    <EditText
+        android:id="@+id/inputMdp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/mdp"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/inputMdpAgain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="@string/mdpAgain"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonInscription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="validerInscription"
+        android:text="@string/inscription" />
+
+</LinearLayout>

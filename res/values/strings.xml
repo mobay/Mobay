@@ -4,5 +4,13 @@
     <string name="app_name">Mobay</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_help">HelpActivity</string>
+    <string name="title_activity_inscription">InscriptionActivity</string>
+    <string name="aide">Aide</string>
+    <string name="inscription">Inscription</string>
+    <string name="connexion">Connexion</string>
+    <string name="numTel">Numéro de téléphone</string>
+    <string name="mdp">Mot de passe</string>
+    <string name="pseudo">Peudonyme (facultatif)</string>
+    <string name="mdpAgain">Répéter le mot de passe</string>
 
 </resources>

@@ -16,6 +16,7 @@ import com.parse.PushService;
 
 import android.accounts.Account;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,7 +30,7 @@ public class MainActivity extends Activity
     {	
 		super.onCreate(savedInstanceState);
 
-		// Parse: register sublass User
+		// Parse: register subclass User
 		ParseObject.registerSubclass(Utilisateur.class);
 		ParseObject.registerSubclass(Compte.class);
 		ParseObject.registerSubclass(Operation.class);
@@ -40,14 +41,14 @@ public class MainActivity extends Activity
 		// Also in this method, specify a default Activity to handle push notifications
 		PushService.setDefaultPushCallback(this, MainActivity.class);
 		
-		Utilisateur user = new Utilisateur("elPatrate", "02030401", "mdptest", "");
+		/*Utilisateur user = new Utilisateur("elPatrate", "02030401", "mdptest", "");
 		user.saveInBackground();
 				
 		Compte account = new Compte("axgrHfavb8", 5000);
 		account.saveInBackground();
 		
 		Operation ope = new Operation("axgrHfavb8", TypeOperation.VIREMENT, 1000, new Date());
-		ope.saveInBackground();
+		ope.saveInBackground();*/
 
 		/*ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
 		query.whereEqualTo("username", "apautrat");
@@ -74,8 +75,15 @@ public class MainActivity extends Activity
         setContentView(R.layout.activity_main);
     }
     
+	public void onButtonInscription(View view)
+	{
+		// L'objet Intent permet de passer d'une activite a une autre
+		Intent intentInsciption = new Intent(this, InscriptionActivity.class);
+		startActivity(intentInsciption);
+	}
+	
     public void onButtonHelp(View view)
     {
-    	setContentView(R.layout.activity_help);
-    }
+		Intent intentHelp = new Intent(this, HelpActivity.class);
+		startActivity(intentHelp);    }
 }
