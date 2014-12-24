@@ -1,5 +1,8 @@
 package com.example.mobay;
 
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+
 import com.example.model.Utilisateur;
 
 import android.app.Activity;
@@ -37,14 +40,14 @@ public class InscriptionActivity extends Activity
 	}
 	
 	// Methode appelee lors du clic sur le bouton Inscription
-	public void validerInscription(View view)
+	public void validerInscription(View view) throws Exception
 	{
 		String numTel = inputNumTel.getText().toString();
 		String pseudo = inputPseudo.getText().toString();
 		String mdp = inputMdp.getText().toString();
 		String mdpAgain = inputMdpAgain.getText().toString();
 		
-		String telPattern = "(\\+[0-9][0-9][0-9]( [0-9][0-9])+)|([0-9]+)";
+		String telPattern = "^((\\+|00)33\\s?|0)[679](\\s?\\d{2}){4}$";
 		String pseudoPattern = "^[a-z0-9_-]{3,15}$";
 		String mdpPattern = "((?=.*\\d)(?=.*[a-z]).{6,20})";
 		
@@ -59,14 +62,28 @@ public class InscriptionActivity extends Activity
 		// Numero de telephone invalide
 		if(!numTel.matches(telPattern))
 		{
-			Toast.makeText(getBaseContext(), "Numéro de téléphone invalide!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), "Numéro de téléphone invalide! Veuillez entrer un numéro mobile valable.", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
+		// Doublon numero de telephone
+		if(!Utilisateur.getUtilisateurWithAttribut("numTel", numTel).isEmpty())
+		{
+			Toast.makeText(getBaseContext(), "Ce numéro de téléphone est déjà utilisé!", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
 		// Pseudo invalide
 		if(!pseudo.isEmpty() && !pseudo.matches(pseudoPattern))
 		{
-			Toast.makeText(getBaseContext(), "Pseudonyme invalide!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), "Pseudonyme invalide! Les minuscules, chiffres et tirets sont autorisés et le pseudonyme doit comprendre entre 3 et 15 caractères.", Toast.LENGTH_SHORT).show();
+			return;
+		}
+		
+		// Doublon pseudo
+		if(!pseudo.isEmpty() && !Utilisateur.getUtilisateurWithAttribut("pseudo", pseudo).isEmpty())
+		{
+			Toast.makeText(getBaseContext(), "Ce pseudonyme est déjà utilisé!", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
@@ -80,7 +97,7 @@ public class InscriptionActivity extends Activity
 		// Mot de passe invalide
 		if(!mdp.matches(mdpPattern))
 		{
-			Toast.makeText(getBaseContext(), "Mot de passe invalide!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), "Mot de passe invalide! Vous devez utiliser des minuscules et au moins un chiffre, le mot de passe doit être compris entre 6 et 20 caractères.", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
@@ -99,10 +116,27 @@ public class InscriptionActivity extends Activity
 		}
 		
 		// On peut creer l'utilisateur dans Parse
-		Utilisateur user = new Utilisateur(pseudo, numTel, mdp, "");
+		Utilisateur user = new Utilisateur(pseudo, numTel, crypterMdp(mdp), "");
 		user.saveInBackground();
 		
 		Toast.makeText(getBaseContext(), "Vous avez bien créé un compte sur Mobay!", Toast.LENGTH_SHORT).show();
 		
+	}
+	
+	private String crypterMdp(String mdp) throws Exception
+	{
+		MessageDigest md = MessageDigest.getInstance("MD5");
+		md.update(mdp.getBytes());
+		
+		byte byteData[] = md.digest();
+		
+		// Conversion byte en hexa
+		StringBuffer sb = new StringBuffer();
+		for(int i = 0; i < byteData.length; i++)
+			sb.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+
+		Log.d(TAG, "Digest MD5 mdp en hexa: " + sb.toString());
+		
+		return sb.toString();
 	}
 }

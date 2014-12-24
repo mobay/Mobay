@@ -1,11 +1,17 @@
 package com.example.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import android.util.Log;
+
 import com.parse.*;
 
 @ParseClassName("Utilisateur")
 public class Utilisateur extends ParseObject
 {
-
+	private static final String TAG = "Model-Utilisateur";
+	
 	public Utilisateur()
 	{
 		// Default constructor required
@@ -18,6 +24,24 @@ public class Utilisateur extends ParseObject
 		put("numTel", numTel);
 		put("mdp", mdp);
 		put("parrain", parrain);
+	}
+	
+	public static List<ParseObject> getUtilisateurWithAttribut(String attribut, String valAttribut)
+	{
+		List<ParseObject> listeUtilisateurs = new ArrayList<ParseObject>();
+		
+		ParseQuery<ParseObject> query = ParseQuery.getQuery("Utilisateur");
+		query.whereEqualTo(attribut, valAttribut);
+		try
+		{
+			listeUtilisateurs = query.find();
+		}
+		catch (ParseException e)
+		{
+			Log.e(TAG, e.getMessage());
+		}
+		
+		return listeUtilisateurs;
 	}
 	
 	public String getPseudo() 
