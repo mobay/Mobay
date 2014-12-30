@@ -12,5 +12,6 @@
     <string name="mdp">Mot de passe</string>
     <string name="pseudo">Peudonyme (facultatif)</string>
     <string name="mdpAgain">Répéter le mot de passe</string>
+    <string name="title_activity_connection">ConnectionActivity</string>
 
 </resources>

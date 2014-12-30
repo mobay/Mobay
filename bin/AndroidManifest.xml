@@ -73,6 +73,10 @@
             android:name=".InscriptionActivity"
             android:label="@string/title_activity_inscription" >
         </activity>
+        <activity
+            android:name=".ConnectionActivity"
+            android:label="@string/title_activity_connection" >
+        </activity>
     </application>
 
 </manifest>

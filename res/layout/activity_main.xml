@@ -34,15 +34,17 @@
         android:layout_above="@+id/button3"
         android:layout_alignLeft="@+id/button3"
         android:layout_marginBottom="30dp"
+        android:onClick="onButtonConnexion"
         android:text="@string/connexion" />
 
     <TextView
-        android:id="@+id/titleInsciption"
-        android:layout_width="98dp"
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/button2"
-        android:layout_marginTop="33dp"
-        android:text="@string/app_name" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:text="@string/app_name"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

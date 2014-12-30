@@ -39,16 +39,7 @@ public class MainActivity extends Activity
 		Parse.initialize(this, "AZ4u27xv2CXc9Y86zo9AswO2aTo70Wb0nnHVuWMj", "zUw4j02xMw3TeBjtqPLRc7hMvSYZSlA3Ndxmjk6K");
 		
 		// Also in this method, specify a default Activity to handle push notifications
-		PushService.setDefaultPushCallback(this, MainActivity.class);
-		
-		/*Utilisateur user = new Utilisateur("elPatrate", "02030401", "mdptest", "");
-		user.saveInBackground();
-				
-		Compte account = new Compte("axgrHfavb8", 5000);
-		account.saveInBackground();
-		
-		Operation ope = new Operation("axgrHfavb8", TypeOperation.VIREMENT, 1000, new Date());
-		ope.saveInBackground();*/
+		//PushService.setDefaultPushCallback(this, MainActivity.class);
 
 		/*ParseQuery<ParseObject> query = ParseQuery.getQuery("_User");
 		query.whereEqualTo("username", "apautrat");
@@ -82,8 +73,15 @@ public class MainActivity extends Activity
 		startActivity(intentInsciption);
 	}
 	
+	public void onButtonConnexion(View view)
+	{
+		Intent intentConnexion = new Intent(this, ConnectionActivity.class);
+		startActivity(intentConnexion);
+	}
+	
     public void onButtonHelp(View view)
     {
 		Intent intentHelp = new Intent(this, HelpActivity.class);
-		startActivity(intentHelp);    }
+		startActivity(intentHelp);    
+    }
 }
