@@ -38,7 +38,6 @@ public class ConnectionActivity extends Activity
 		String mdp = inputMdp.getText().toString();
 		
 		String telPattern = "^((\\+|00)33\\s?|0)[679](\\s?\\d{2}){4}$";
-		String mdpPattern = "((?=.*\\d)(?=.*[a-z]).{6,20})";
 		
 		// Verifications
 		// Numero de telephone absent
@@ -82,12 +81,16 @@ public class ConnectionActivity extends Activity
 		
 		// Passage au menu principal et attribution 'variable de session'
 		Log.d(TAG, "Connexion de: " + utilisateurCourant.getNumTel());
-		Toast.makeText(getBaseContext(), "Données correctes, connexion en cours", Toast.LENGTH_SHORT).show();
+		Toast.makeText(getBaseContext(), "Données correctes, connexion réussie!", Toast.LENGTH_SHORT).show();
+		
+		// Attribution de la variable de session pour l'utilisateur courant
 		Mobay.utilisateurCourant = utilisateurCourant;
 		
-		// Pour l'instant, test en allant a l'aide => conservation de la variable utilisateurCourant = youpi
-		Intent intentTest = new Intent(this, HelpActivity.class);
-		startActivity(intentTest);
+		// Acces au menu principal
+		Intent intentMainMenu = new Intent(this, MainMenuActivity.class);
+		startActivity(intentMainMenu);
 		
+		// La connexion etant effectuee, on met fin a l'activite (on ne pourra plus y revenir avec le bouton Precedent)
+		finish();
 	}
 }

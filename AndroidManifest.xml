@@ -77,6 +77,18 @@
             android:name=".ConnectionActivity"
             android:label="@string/title_activity_connection" >
         </activity>
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="@string/title_activity_main_menu" >
+        </activity>
+        <activity
+            android:name=".TestActivity"
+            android:label="@string/title_activity_test" >
+        </activity>
+        <activity
+            android:name=".IDsActivity"
+            android:label="@string/title_activity_ids" >
+        </activity>
     </application>
 
 </manifest>

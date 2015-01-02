@@ -3,6 +3,7 @@ package com.example.mobay;
 import com.example.model.Utilisateur;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -71,7 +72,7 @@ public class InscriptionActivity extends Activity
 		// Pseudo invalide
 		if(!pseudo.isEmpty() && !pseudo.matches(pseudoPattern))
 		{
-			Toast.makeText(getBaseContext(), "Pseudonyme invalide! Les minuscules, chiffres et tirets sont autorisés et le pseudonyme doit comprendre entre 3 et 15 caractères.", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), "Pseudonyme invalide! Les minuscules, chiffres et tirets sont autorisés et le pseudonyme doit comprendre entre 3 et 15 caractères.", Toast.LENGTH_LONG).show();
 			return;
 		}
 		
@@ -92,7 +93,7 @@ public class InscriptionActivity extends Activity
 		// Mot de passe invalide
 		if(!mdp.matches(mdpPattern))
 		{
-			Toast.makeText(getBaseContext(), "Mot de passe invalide! Vous devez utiliser des minuscules et au moins un chiffre, le mot de passe doit être compris entre 6 et 20 caractères.", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), "Mot de passe invalide! Vous devez utiliser des minuscules et au moins un chiffre, le mot de passe doit être compris entre 6 et 20 caractères.", Toast.LENGTH_LONG).show();
 			return;
 		}
 		
@@ -114,7 +115,13 @@ public class InscriptionActivity extends Activity
 		Utilisateur user = new Utilisateur(pseudo, numTel, Utilisateur.crypterMdp(mdp), "");
 		user.saveInBackground();
 		
-		Toast.makeText(getBaseContext(), "Vous avez bien créé un compte sur Mobay!", Toast.LENGTH_SHORT).show();
+		Toast.makeText(getBaseContext(), "Vous avez bien créé un compte sur Mobay! Veuillez désormais vous connecter.", Toast.LENGTH_SHORT).show();
 		
+		// Acces a l'activite de connexion
+		Intent intentConnexion = new Intent(this, ConnectionActivity.class);
+		startActivity(intentConnexion);
+		
+		// L'inscription etant finie, on met fin a l'activite (on ne pourra plus y revenir avec le bouton Precedent)
+		finish();
 	}
 }

@@ -1537,6 +1537,15 @@ containing a value of this type.
  Default text size for action bar title.
          */
         public static final int abc_text_size_title_material_toolbar=0x7f080012;
+        /**  Default screen margins, per the Android Design guidelines. 
+
+         Example customization of dimensions originally defined in res/values/dimens.xml
+         (such as screen margins) for screens with more than 820dp of available width. This
+         would include 7" and 10" devices in landscape (~960dp and ~1280dp respectively).
+    
+         */
+        public static final int activity_horizontal_margin=0x7f08002b;
+        public static final int activity_vertical_margin=0x7f08002c;
         /**  The platform's desired fixed height for a dialog along the major axis
          (the screen is in portrait). This may be either a fraction or a dimension.
  The platform's desired fixed height for a dialog along the major axis
@@ -1571,6 +1580,12 @@ containing a value of this type.
         public static final int dialog_fixed_width_minor=0x7f08000d;
         public static final int disabled_alpha_material_dark=0x7f080001;
         public static final int disabled_alpha_material_light=0x7f080000;
+        /** 
+         Per the design guidelines, navigation drawers should be between 240dp and 320dp:
+         https://developer.android.com/design/patterns/navigation-drawer.html
+    
+         */
+        public static final int navigation_drawer_width=0x7f08002d;
     }
     public static final class drawable {
         public static final int abc_ab_share_pack_holo_dark=0x7f020000;
@@ -1624,16 +1639,18 @@ containing a value of this type.
         public static final int abc_textfield_search_activated_mtrl_alpha=0x7f020030;
         public static final int abc_textfield_search_default_mtrl_alpha=0x7f020031;
         public static final int abc_textfield_search_material=0x7f020032;
-        public static final int ic_launcher=0x7f020033;
+        public static final int drawer_shadow=0x7f020033;
+        public static final int ic_drawer=0x7f020034;
+        public static final int ic_launcher=0x7f020035;
     }
     public static final class id {
         public static final int GridLayout1=0x7f050045;
-        public static final int LinearLayout1=0x7f050048;
-        public static final int RelativeLayout1=0x7f050052;
-        public static final int Space1=0x7f050049;
-        public static final int Space2=0x7f05004a;
-        public static final int Space3=0x7f05004b;
-        public static final int Space4=0x7f05004c;
+        public static final int LinearLayout1=0x7f05004e;
+        public static final int RelativeLayout1=0x7f050058;
+        public static final int Space1=0x7f05004f;
+        public static final int Space2=0x7f050050;
+        public static final int Space3=0x7f050051;
+        public static final int Space4=0x7f050052;
         public static final int action_bar=0x7f050033;
         public static final int action_bar_activity_content=0x7f05001a;
         public static final int action_bar_container=0x7f050032;
@@ -1642,18 +1659,29 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f050021;
         public static final int action_bar_title=0x7f050020;
         public static final int action_context_bar=0x7f050034;
+        public static final int action_example=0x7f050063;
         public static final int action_menu_divider=0x7f05001c;
         public static final int action_menu_presenter=0x7f05001d;
         public static final int action_mode_bar=0x7f050030;
         public static final int action_mode_bar_stub=0x7f05002f;
         public static final int action_mode_close_button=0x7f050022;
+        public static final int action_settings=0x7f050062;
         public static final int activity_chooser_view_content=0x7f050023;
         public static final int always=0x7f05000d;
         public static final int beginning=0x7f050012;
         public static final int bottom=0x7f050016;
-        public static final int button2=0x7f050054;
-        public static final int button3=0x7f050053;
-        public static final int buttonInscription=0x7f050051;
+        public static final int buttonAccepterDemandeMenu=0x7f05005b;
+        public static final int buttonAideMenu=0x7f05005f;
+        public static final int buttonCoopterAmiMenu=0x7f05005e;
+        public static final int buttonDecoMenu=0x7f050061;
+        public static final int buttonDemandeArgentMenu=0x7f05005c;
+        public static final int buttonEnvoiArgentMenu=0x7f050060;
+        public static final int buttonGererCompteMenu=0x7f05005a;
+        public static final int buttonGererIdentifiantsMenu=0x7f05005d;
+        public static final int buttonHistoriqueMenu=0x7f050059;
+        public static final int buttonInscription=0x7f050057;
+        public static final int buttonModifyMdp=0x7f050049;
+        public static final int buttonModifyPseudo=0x7f05004b;
         public static final int buttonValidateConnection=0x7f050044;
         public static final int checkbox=0x7f05002b;
         public static final int collapseActionView=0x7f05000f;
@@ -1662,6 +1690,10 @@ containing a value of this type.
         public static final int dialog=0x7f050010;
         public static final int disableHome=0x7f05000a;
         public static final int dropdown=0x7f050011;
+        public static final int editTextCurrentMdp=0x7f05004d;
+        public static final int editTextModifyPseudo=0x7f05004a;
+        public static final int editTextNewMdp=0x7f05004c;
+        public static final int editTextNewMdpAgain=0x7f050048;
         public static final int edit_query=0x7f050035;
         public static final int end=0x7f050014;
         public static final int expand_activities_button=0x7f050024;
@@ -1671,12 +1703,12 @@ containing a value of this type.
         public static final int icon=0x7f050028;
         public static final int ifRoom=0x7f05000c;
         public static final int image=0x7f050025;
-        public static final int inputMdp=0x7f05004f;
-        public static final int inputMdpAgain=0x7f050050;
+        public static final int inputMdp=0x7f050055;
+        public static final int inputMdpAgain=0x7f050056;
         public static final int inputMdpConnection=0x7f050042;
-        public static final int inputNumTel=0x7f05004d;
+        public static final int inputNumTel=0x7f050053;
         public static final int inputNumTelConnection=0x7f050043;
-        public static final int inputPseudo=0x7f05004e;
+        public static final int inputPseudo=0x7f050054;
         public static final int listMode=0x7f050002;
         public static final int list_item=0x7f050027;
         public static final int middle=0x7f050013;
@@ -1764,9 +1796,15 @@ containing a value of this type.
         public static final int abc_simple_dropdown_hint=0x7f030016;
         public static final int activity_connection=0x7f030017;
         public static final int activity_help=0x7f030018;
-        public static final int activity_inscription=0x7f030019;
-        public static final int activity_main=0x7f03001a;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001b;
+        public static final int activity_ids=0x7f030019;
+        public static final int activity_inscription=0x7f03001a;
+        public static final int activity_main=0x7f03001b;
+        public static final int activity_main_menu=0x7f03001c;
+        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+    }
+    public static final class menu {
+        public static final int global=0x7f0c0000;
+        public static final int test=0x7f0c0001;
     }
     public static final class string {
         /**  Content description for the action bar "home" affordance. [CHAR LIMIT=NONE] 
@@ -1822,18 +1860,42 @@ containing a value of this type.
         /**  Description of a share target (both in the list of such or the default share button) in a ShareActionProvider (share UI). [CHAR LIMIT=NONE] 
          */
         public static final int abc_shareactionprovider_share_with_application=0x7f0a000d;
+        public static final int accepterDemandeArgent=0x7f0a0026;
+        public static final int action_example=0x7f0a0022;
+        public static final int action_settings=0x7f0a0023;
         public static final int aide=0x7f0a0013;
         public static final int app_name=0x7f0a000f;
         public static final int connexion=0x7f0a0015;
+        public static final int coopterAmi=0x7f0a002a;
+        public static final int deco=0x7f0a002b;
+        public static final int demandeArgent=0x7f0a0025;
+        public static final int envoiArgent=0x7f0a0024;
+        public static final int gererCompte=0x7f0a0027;
+        public static final int gererIdentifiants=0x7f0a0029;
         public static final int hello_world=0x7f0a0010;
+        public static final int historique=0x7f0a0028;
         public static final int inscription=0x7f0a0014;
         public static final int mdp=0x7f0a0017;
+        public static final int mdpActuel=0x7f0a0032;
         public static final int mdpAgain=0x7f0a0019;
+        public static final int modifierMdp=0x7f0a002d;
+        public static final int modifierPseudo=0x7f0a002e;
+        public static final int navigation_drawer_close=0x7f0a0021;
+        public static final int navigation_drawer_open=0x7f0a0020;
+        public static final int nouveauMdp=0x7f0a0030;
+        public static final int nouveauMdpAgain=0x7f0a0031;
         public static final int numTel=0x7f0a0016;
         public static final int pseudo=0x7f0a0018;
+        public static final int pseudoBrut=0x7f0a002f;
         public static final int title_activity_connection=0x7f0a001a;
         public static final int title_activity_help=0x7f0a0011;
+        public static final int title_activity_ids=0x7f0a002c;
         public static final int title_activity_inscription=0x7f0a0012;
+        public static final int title_activity_main_menu=0x7f0a001b;
+        public static final int title_activity_test=0x7f0a001c;
+        public static final int title_section1=0x7f0a001d;
+        public static final int title_section2=0x7f0a001e;
+        public static final int title_section3=0x7f0a001f;
     }
     public static final class style {
         /** 

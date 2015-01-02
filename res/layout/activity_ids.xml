@@ -1,0 +1,85 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/gererIdentifiants"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <EditText
+        android:id="@+id/editTextNewMdpAgain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonModifyMdp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:ems="10"
+        android:hint="@string/nouveauMdpAgain"
+        android:inputType="textPassword" />
+
+    <EditText
+        android:id="@+id/editTextModifyPseudo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/buttonModifyPseudo"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="64dp"
+        android:ems="10"
+        android:hint="@string/pseudoBrut" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button
+        android:id="@+id/buttonModifyMdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="60dp"
+        android:onClick="modifierMdp"
+        android:text="@string/modifierMdp" />
+
+    <EditText
+        android:id="@+id/editTextNewMdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextNewMdpAgain"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="15dp"
+        android:ems="10"
+        android:hint="@string/nouveauMdp"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/buttonModifyPseudo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextNewMdp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="110dp"
+        android:onClick="modifierPseudo"
+        android:text="@string/modifierPseudo" />
+
+    <EditText
+        android:id="@+id/editTextCurrentMdp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/editTextNewMdp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="16dp"
+        android:ems="10"
+        android:hint="@string/mdpActuel"
+        android:inputType="textPassword" />
+
+</RelativeLayout>
