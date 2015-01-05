@@ -11,7 +11,7 @@
         android:layout_above="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="56dp"
-        android:text="Demander de l&apos;argent" />
+        android:text="L'envoi a été effectué" />
 
     <Button
         android:id="@+id/menuAccueil"
@@ -29,7 +29,7 @@
         android:layout_above="@+id/deconnexion"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="58dp"
-        android:text="La demande d&apos;agent a été transmise" />
+        android:text="Nouveau solde du compte : " />
 
     <Button
         android:id="@+id/deconnexion"
@@ -40,5 +40,23 @@
         android:layout_marginLeft="18dp"
         android:layout_toRightOf="@+id/menuAccueil"
         android:text="Déconnexion" />
+
+    <TextView
+        android:id="@+id/solde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/menuAccueil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:text="0.0"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Envoyer de l'argent" />
 
 </RelativeLayout>

@@ -11,33 +11,52 @@
         android:layout_above="@+id/textView1"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="56dp"
-        android:text="Demander de l&apos;argent" />
+        android:text="Envoyer de l'argent" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView3"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="47dp"
+        android:text="Votre demande ne peut aboutir. Le destinataire de la demande n&apos;est pas abooné à MMoobbayy" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/menuAccueil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="52dp"
+        android:text="Nouveau solde du compte" />
 
     <Button
         android:id="@+id/menuAccueil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/deconnexion"
+        android:layout_alignBottom="@+id/deconnexion"
         android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="16dp"
         android:text="Menu d&apos;accueil" />
 
     <Button
         android:id="@+id/deconnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="22dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="186dp"
+        android:layout_marginLeft="21dp"
+        android:layout_toRightOf="@+id/menuAccueil"
         android:text="Déconnexion" />
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/solde"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/menuAccueil"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="45dp"
-        android:text="Votre demande ne peut aboutir. Le destinataire de la demande n&apos;est pas abooné à Mobay" />
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:text="0.0" />
 
 </RelativeLayout>

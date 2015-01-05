@@ -13,13 +13,19 @@ public class Operation extends ParseObject
 		// Default constructor required
 	}
 	
-	public Operation(String utilisateurObjectId, TypeOperation type, double montant, Date date) 
+	public Operation(String utilisateurObjectId, TypeOperation type, double montant, Date date, String destinataireObjectId) 
 	{		
 		// On renseigne les attributs dans la table
 		put("utilisateurObjectId", utilisateurObjectId); 
 		put("type", type.ordinal());
 		put("montant", montant);
 		put("date", date);
+		put("destinataireObjectId",destinataireObjectId);
+	}
+	
+	public String getDestinataireObjectId() 
+	{
+		return getString("destinataireObjectId");
 	}
 	
 	public String getUtilisateurObjectId() 
@@ -46,6 +52,11 @@ public class Operation extends ParseObject
 	public void setUtilisateurObjectIdr(String utilisateurObjectId) 
 	{
 		put("utilisateurObjectId", utilisateurObjectId);
+	}
+	
+	public void setDestinataireObjectIdr(String utilisateurObjectId) 
+	{
+		put("destinatiareObjectId", utilisateurObjectId);
 	}
 
 	public void setType(TypeOperation type)
