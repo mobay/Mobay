@@ -1658,13 +1658,13 @@ containing a value of this type.
         public static final int action_bar_subtitle=0x7f05001f;
         public static final int action_bar_title=0x7f05001e;
         public static final int action_context_bar=0x7f050032;
-        public static final int action_example=0x7f050061;
+        public static final int action_example=0x7f050068;
         public static final int action_menu_divider=0x7f05001a;
         public static final int action_menu_presenter=0x7f05001b;
         public static final int action_mode_bar=0x7f05002e;
         public static final int action_mode_bar_stub=0x7f05002d;
         public static final int action_mode_close_button=0x7f050020;
-        public static final int action_settings=0x7f050060;
+        public static final int action_settings=0x7f050067;
         public static final int activity_chooser_view_content=0x7f050021;
         public static final int always=0x7f05000d;
         public static final int beginning=0x7f050012;
@@ -1683,6 +1683,7 @@ containing a value of this type.
         public static final int buttonValidateConnection=0x7f050042;
         public static final int checkbox=0x7f050029;
         public static final int collapseActionView=0x7f05000f;
+        public static final int deconnexion=0x7f050066;
         public static final int decor_content_parent=0x7f05002f;
         public static final int default_activity_button=0x7f050024;
         public static final int dialog=0x7f050010;
@@ -1709,10 +1710,13 @@ containing a value of this type.
         public static final int inputPseudo=0x7f050052;
         public static final int listMode=0x7f050002;
         public static final int list_item=0x7f050025;
+        public static final int menuAccueil=0x7f050065;
         public static final int middle=0x7f050013;
+        public static final int montant=0x7f050062;
         public static final int never=0x7f05000b;
         public static final int none=0x7f050004;
         public static final int normal=0x7f050001;
+        public static final int numOrAlias=0x7f050061;
         public static final int progress_circular=0x7f05001c;
         public static final int progress_horizontal=0x7f05001d;
         public static final int radio=0x7f05002b;
@@ -1733,12 +1737,15 @@ containing a value of this type.
         public static final int split_action_bar=0x7f050019;
         public static final int submit_area=0x7f05003c;
         public static final int tabMode=0x7f050003;
+        public static final int textMontant=0x7f050060;
+        public static final int textNumMobile=0x7f050063;
         public static final int textView1=0x7f05003f;
         public static final int textView2=0x7f050045;
         public static final int title=0x7f050027;
         public static final int titleInsciption=0x7f050044;
         public static final int up=0x7f050016;
         public static final int useLogo=0x7f050005;
+        public static final int valider=0x7f050064;
         public static final int withText=0x7f05000e;
         public static final int wrap_content=0x7f050000;
     }
@@ -1797,7 +1804,10 @@ containing a value of this type.
         public static final int activity_inscription=0x7f03001a;
         public static final int activity_main=0x7f03001b;
         public static final int activity_main_menu=0x7f03001c;
-        public static final int support_simple_spinner_dropdown_item=0x7f03001d;
+        public static final int activity_send_money=0x7f03001d;
+        public static final int activity_send_money_nok=0x7f03001e;
+        public static final int activity_send_money_ok=0x7f03001f;
+        public static final int support_simple_spinner_dropdown_item=0x7f030020;
     }
     public static final class menu {
         public static final int global=0x7f0c0000;
@@ -1892,6 +1902,9 @@ containing a value of this type.
         public static final int title_activity_ids=0x7f0a002d;
         public static final int title_activity_inscription=0x7f0a0013;
         public static final int title_activity_main_menu=0x7f0a001c;
+        public static final int title_activity_send_money=0x7f0a0034;
+        public static final int title_activity_send_money_nok=0x7f0a0035;
+        public static final int title_activity_send_money_ok=0x7f0a0036;
         public static final int title_activity_test=0x7f0a001d;
         public static final int title_section1=0x7f0a001e;
         public static final int title_section2=0x7f0a001f;

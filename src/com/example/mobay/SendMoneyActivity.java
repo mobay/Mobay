@@ -3,35 +3,27 @@ package com.example.mobay;
 import java.util.Date;
 import java.util.List;
 
-import com.example.model.Compte;
-import com.example.model.Mobay;
-import com.example.model.Operation;
-import com.example.model.TypeOperation;
-import com.example.model.Utilisateur;
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
-
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
-import android.view.KeyEvent;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import com.example.model.Compte;
+import com.example.model.Mobay;
+import com.example.model.Operation;
+import com.example.model.TypeOperation;
+import com.example.model.Utilisateur;
 // soit rajouter un champ à la table operation pour valider un operation quand l'autre la recoit+valide après ça on débite le premier
 // operation doit avoir un champ de destinataire sinon comment on fait pour connaître qui on doit donner l'argent
 	// comment on fait si un user a plusieur demande d'argent a accepter ??? une par une , on fait une liste
-public class SendMoneyActivity extends ActionBarActivity {
+public class SendMoneyActivity extends Activity {
 
 	private static final String TAG = "SendMoneyActivity";
 
