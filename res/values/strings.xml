@@ -37,5 +37,8 @@
     <string name="nouveauMdp">Nouveau mot de passe</string>
     <string name="nouveauMdpAgain">Répéter le nouveau mot de passe</string>
     <string name="mdpActuel">Mot de passe actuel</string>
+    <string name="title_activity_send_money">SendMoneyActivity</string>
+    <string name="title_activity_send_money_nok">SendMoneyActivityNok</string>
+    <string name="title_activity_send_money_ok">SendMoneyActivityOk</string>
 
 </resources>

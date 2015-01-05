@@ -27,7 +27,8 @@ public class MainMenuActivity extends Activity
 	
 	public void envoiArgent(View v)
 	{
-		
+		Intent sendMoney = new Intent(this, SendMoneyActivity.class);
+		startActivity(sendMoney);
 	}
 	
 	public void demandeArgent(View v)

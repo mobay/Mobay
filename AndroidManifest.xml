@@ -89,6 +89,18 @@
             android:name=".IDsActivity"
             android:label="@string/title_activity_ids" >
         </activity>
+         <activity
+            android:name=".SendMoneyActivity"
+            android:label="@string/title_activity_send_money" >
+        </activity>
+           <activity
+            android:name=".SendMoneyNokActivity"
+            android:label="@string/title_activity_send_money_nok" >
+        </activity>
+           <activity
+            android:name=".SendMoneyOkActivity"
+            android:label="@string/title_activity_send_money_ok" >
+        </activity>
     </application>
 
 </manifest>
