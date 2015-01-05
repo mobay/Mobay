@@ -32,8 +32,9 @@ public class SendMoneyNokActivity extends Activity {
 		deconnexion.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent deconnexion = new Intent(SendMoneyNokActivity.this, MainMenuActivity.class);
+				Intent deconnexion = new Intent(SendMoneyNokActivity.this, MainActivity.class);
 				startActivity(deconnexion);
+				finish();
 			}
 
 		});

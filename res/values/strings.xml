@@ -39,6 +39,9 @@
     <string name="mdpActuel">Mot de passe actuel</string>
     <string name="title_activity_send_money">SendMoneyActivity</string>
     <string name="title_activity_send_money_nok">SendMoneyActivityNok</string>
-    <string name="title_activity_send_money_ok">SendMoneyActivityOk</string>
+    <string name="title_activity_send_money_ok">SendMoneyActivityOk</string>   
+   <string name="title_activity_ask_for_money">Demander de l\'argent</string>
+    <string name="title_activity_ask_for_money_nok">Demander de l\'argent \- erreur</string>
+    <string name="title_activity_ask_for_money_ok">Demander de l\'argent \- yeah</string>
 
 </resources>

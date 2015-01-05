@@ -4,8 +4,6 @@ import java.util.Date;
 import java.util.List;
 
 import android.app.Activity;
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -17,16 +15,13 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.model.Compte;
 import com.example.model.Mobay;
 import com.example.model.Operation;
 import com.example.model.TypeOperation;
 import com.example.model.Utilisateur;
 import com.parse.ParseObject;
-//  pour valider un operation quand l'autre la recoit+valide après ça on débite le premier ==> Boolean
-// comment on fait si un user a plusieur demande d'argent a accepter ???  on fait une liste
 
-public class SendMoneyActivity extends Activity {
+public class AskForMoneyActivity extends Activity {
 	private static final String TAG = "SendMoneyActivity";
 
 	Button valider = null;
@@ -34,16 +29,10 @@ public class SendMoneyActivity extends Activity {
 	Button deconnexion = null;
 	static EditText numOrAlias = null;
 	static EditText montant = null;
-	static double soldeUtilisateurCourant = 0;
-	static double soldeDestinataire = 0;
 
-	static List<ParseObject> listAccountUtilisateurCourant = null;
-	static List<ParseObject> listAccountUtilisateurDestinataire = null;
 
-	static Utilisateur utilisateurIndique = null; // l'utilisateur vers qui on
-													// envoie de l'argent
+	static Utilisateur utilisateurIndique = null;
 
-	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_send_money);
@@ -60,7 +49,7 @@ public class SendMoneyActivity extends Activity {
 		deconnexion.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent deconnexion = new Intent(SendMoneyActivity.this, MainMenuActivity.class);
+				Intent deconnexion = new Intent(AskForMoneyActivity.this, MainMenuActivity.class);
 				startActivity(deconnexion);
 			}
 
@@ -68,7 +57,7 @@ public class SendMoneyActivity extends Activity {
 		menuAccueil.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent deconnexion = new Intent(SendMoneyActivity.this, MainActivity.class);
+				Intent deconnexion = new Intent(AskForMoneyActivity.this, MainActivity.class);
 				startActivity(deconnexion);
 				finish();
 			}
@@ -138,12 +127,8 @@ public class SendMoneyActivity extends Activity {
 			if (Utilisateur.getUtilisateurWithAttribut("numTel", numOrAliasText).isEmpty() && Utilisateur.getUtilisateurWithAttribut("pseudo", numOrAliasText).isEmpty()) {
 				Log.d(TAG, "User est pas dans la db !");
 				Log.d(TAG, "Envoi d'argent : NOK");
-				SendMoneyActivity.envoiMoney(-1);// -1 permet de récuperer le
-													// solde du compte de
-													// l'utilisateur courant
-				Intent sendMoneyNok = new Intent(SendMoneyActivity.this, SendMoneyNokActivity.class);
-				sendMoneyNok.putExtra("soldeUtilisateurCourant", soldeUtilisateurCourant);
-				startActivity(sendMoneyNok);
+				Intent askForMoneyNok = new Intent(AskForMoneyActivity.this, AskForMoneyNokActivity.class);
+				startActivity(askForMoneyNok);
 				return;
 			}
 
@@ -157,75 +142,20 @@ public class SendMoneyActivity extends Activity {
 				utilisateurIndique = (Utilisateur) Utilisateur.getUtilisateurWithAttribut("pseudo", numOrAliasText).get(0);
 
 			if (utilisateurIndique.getObjectId().matches(Mobay.utilisateurCourant.getObjectId())) {
-				Toast.makeText(getBaseContext(), "Vous ne pouvez pas vous envoyer de l'argent à vous même", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getBaseContext(), "Vous ne pouvez pas vous demander de l'argent à vous même", Toast.LENGTH_SHORT).show();
 				return;
 			}
 
 			Log.d(TAG, "Envoi d'argent : OK");
-			SendMoneyActivity.envoiMoney(montant);
-			if ((soldeUtilisateurCourant - montant) >= 0) {
-				Intent sendMoneyOk = new Intent(SendMoneyActivity.this, SendMoneyOkActivity.class);
-				sendMoneyOk.putExtra("soldeUtilisateurCourant", soldeUtilisateurCourant);
-				startActivity(sendMoneyOk);
-			} else {
-				Toast.makeText(getBaseContext(), "Vous ne pouvez enovyer au maximum que le solde actuel de votre compte", Toast.LENGTH_SHORT).show();
-			}
+			AskForMoneyActivity.demandeMoney(montant);
+			Intent askForMoneyOk = new Intent(AskForMoneyActivity.this, AskForMoneyOkActivity.class);
+			startActivity(askForMoneyOk);
 
 		}
 	};
 
-	private static void envoiMoney(double dbl) {
-		Compte cmptDest = null;
-		Compte cmptUserCour = null;
-
-		if (dbl != -1) {
-			Operation op = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.ENVOI, dbl, new Date(), utilisateurIndique.getObjectId());
-			op.saveInBackground();
-			// on recupere le compte de l'utilisateur destinataire
-			listAccountUtilisateurDestinataire = Compte.getAccountWithUserObjectId(utilisateurIndique.getObjectId());
-		}
-		// on recupere le compte de l'utilisateur courant
-		listAccountUtilisateurCourant = Compte.getAccountWithUserObjectId(Mobay.utilisateurCourant.getObjectId());
-
-		if (listAccountUtilisateurCourant.isEmpty()) {
-			cmptUserCour = new Compte(Mobay.utilisateurCourant.getObjectId(), 0);
-			cmptUserCour.saveInBackground();
-			Log.d(TAG, "Création d'un compte pour l'utilisateur courant");
-			// on actualise la liste
-			listAccountUtilisateurCourant = Compte.getAccountWithUserObjectId(Mobay.utilisateurCourant.getObjectId());
-		} else if (dbl != -1 && listAccountUtilisateurDestinataire.isEmpty()) {
-			cmptDest = new Compte(utilisateurIndique.getObjectId(), 0);
-			cmptDest.saveInBackground();
-			Log.d(TAG, "Création d'un compte pour l'utilisateur destinataire");
-			// on actualise la liste
-			listAccountUtilisateurDestinataire = Compte.getAccountWithUserObjectId(utilisateurIndique.getObjectId());
-		} else {
-			Log.d(TAG, "On procède à l'envoi !");
-		}
-
-		// recupération des soldes
-		if (dbl != -1) {
-			soldeDestinataire = (double) ((Compte) listAccountUtilisateurDestinataire.get(0)).getSolde();
-		}
-		soldeUtilisateurCourant = (double) ((Compte) listAccountUtilisateurCourant.get(0)).getSolde();
-
-		if ( dbl != -1 && (soldeUtilisateurCourant - dbl) >= 0 ) {
-
-			// on crédite le compte du destinataire
-			Log.d(TAG, "Solde Destinataire avant operation : " + soldeDestinataire);
-			soldeDestinataire += dbl;
-			Log.d(TAG, "Solde Destinataire après operation : " + soldeDestinataire);
-			cmptDest = ((Compte) listAccountUtilisateurDestinataire.get(0));
-			cmptDest.setSolde(soldeDestinataire);
-			cmptDest.saveInBackground();
-
-			// on débite le compte de l'utilisateur courant
-			Log.d(TAG, "Solde UtilisateurCourant avant operation : " + soldeUtilisateurCourant);
-			soldeUtilisateurCourant -= dbl;
-			Log.d(TAG, "Solde UtilisateurCourant après operation : " + soldeUtilisateurCourant);
-			cmptUserCour = ((Compte) listAccountUtilisateurCourant.get(0));
-			cmptUserCour.setSolde(soldeUtilisateurCourant);
-			cmptUserCour.saveInBackground();
-		}
+	private static void demandeMoney(double dbl) {
+		Operation op = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.RECEPTION, dbl, new Date(), utilisateurIndique.getObjectId());
+		op.saveInBackground();
 	}
 }

@@ -89,17 +89,29 @@
             android:name=".IDsActivity"
             android:label="@string/title_activity_ids" >
         </activity>
-         <activity
+        <activity
             android:name=".SendMoneyActivity"
             android:label="@string/title_activity_send_money" >
         </activity>
-           <activity
+        <activity
             android:name=".SendMoneyNokActivity"
             android:label="@string/title_activity_send_money_nok" >
         </activity>
-           <activity
+        <activity
             android:name=".SendMoneyOkActivity"
             android:label="@string/title_activity_send_money_ok" >
+        </activity>
+        <activity
+            android:name=".AskForMoneyActivity"
+            android:label="@string/title_activity_ask_for_money" >
+        </activity>
+        <activity
+            android:name=".AskForMoneyOkActivity"
+            android:label="@string/title_activity_ask_for_money_ok" >
+        </activity>
+        <activity
+            android:name=".AskForMoneyNokActivity"
+            android:label="@string/title_activity_ask_for_money_nok" >
         </activity>
     </application>
 
