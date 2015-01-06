@@ -60,7 +60,7 @@ public class SendMoneyActivity extends Activity {
 		deconnexion.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent deconnexion = new Intent(SendMoneyActivity.this, MainMenuActivity.class);
+				Intent deconnexion = new Intent(SendMoneyActivity.this, MainActivity.class);
 				startActivity(deconnexion);
 			}
 
@@ -68,7 +68,7 @@ public class SendMoneyActivity extends Activity {
 		menuAccueil.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent deconnexion = new Intent(SendMoneyActivity.this, MainActivity.class);
+				Intent deconnexion = new Intent(SendMoneyActivity.this, MainMenuActivity.class);
 				startActivity(deconnexion);
 				finish();
 			}
@@ -126,11 +126,19 @@ public class SendMoneyActivity extends Activity {
 				return;
 			}
 
-			double montant = Double.parseDouble(montantText);
+			double montantDouble = Double.parseDouble(montantText);
 			Log.d(TAG, "Montant parse en double : " + montant);
 			// Montant < 0
-			if (montant <= 0) {
+			if (montantDouble <= 0) {
 				Toast.makeText(getBaseContext(), "Le montant doit être supérieur à zéro!", Toast.LENGTH_SHORT).show();
+				return;
+			}
+
+			// le montant ne peut comporter que deux chiffres arpès la virgule
+			String montantPattern = "^\\d+(.\\d{1,2})?$";
+			if (!montantText.matches(montantPattern)) {
+				montant.getText().clear();
+				Toast.makeText(getBaseContext(), "Le montant ne peut comporter que deux chiffres après la virgule!", Toast.LENGTH_SHORT).show();
 				return;
 			}
 
@@ -162,8 +170,8 @@ public class SendMoneyActivity extends Activity {
 			}
 
 			Log.d(TAG, "Envoi d'argent : OK");
-			SendMoneyActivity.envoiMoney(montant);
-			if ((soldeUtilisateurCourant - montant) >= 0) {
+			SendMoneyActivity.envoiMoney(montantDouble);
+			if ((soldeUtilisateurCourant - montantDouble) >= 0) {
 				Intent sendMoneyOk = new Intent(SendMoneyActivity.this, SendMoneyOkActivity.class);
 				sendMoneyOk.putExtra("soldeUtilisateurCourant", soldeUtilisateurCourant);
 				startActivity(sendMoneyOk);
@@ -209,7 +217,7 @@ public class SendMoneyActivity extends Activity {
 		}
 		soldeUtilisateurCourant = (double) ((Compte) listAccountUtilisateurCourant.get(0)).getSolde();
 
-		if ( dbl != -1 && (soldeUtilisateurCourant - dbl) >= 0 ) {
+		if (dbl != -1 && (soldeUtilisateurCourant - dbl) >= 0) {
 
 			// on crédite le compte du destinataire
 			Log.d(TAG, "Solde Destinataire avant operation : " + soldeDestinataire);

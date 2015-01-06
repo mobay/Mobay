@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_below="@id/textMontant"
-            android:hint="00,00"
+            android:hint="00.00"
             android:inputType="numberDecimal"
             android:width="100dp" />
 

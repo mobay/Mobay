@@ -49,7 +49,7 @@ public class AskForMoneyActivity extends Activity {
 		deconnexion.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent deconnexion = new Intent(AskForMoneyActivity.this, MainMenuActivity.class);
+				Intent deconnexion = new Intent(AskForMoneyActivity.this, MainActivity.class);
 				startActivity(deconnexion);
 			}
 
@@ -57,7 +57,7 @@ public class AskForMoneyActivity extends Activity {
 		menuAccueil.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-				Intent deconnexion = new Intent(AskForMoneyActivity.this, MainActivity.class);
+				Intent deconnexion = new Intent(AskForMoneyActivity.this, MainMenuActivity.class);
 				startActivity(deconnexion);
 				finish();
 			}
