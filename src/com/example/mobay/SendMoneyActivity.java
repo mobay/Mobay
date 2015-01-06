@@ -101,7 +101,7 @@ public class SendMoneyActivity extends Activity {
 	private OnClickListener validerListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			String numOrAliasText = numOrAlias.getText().toString();
+			String numOrAliasText = numOrAlias.getText().toString().trim();
 			String montantText = montant.getText().toString();
 
 			Log.d(TAG, "Texte du champ NumOrAlias: " + numOrAliasText);
@@ -122,7 +122,7 @@ public class SendMoneyActivity extends Activity {
 
 			// Num / alias < 4 caracteres et > 20 caracteres
 			if (numOrAlias.length() < 4 || numOrAlias.length() > 20) {
-				Toast.makeText(getBaseContext(), "Le champ \"Num. Mobile ou Alias\" doit contenir entre 4  et 20 caractères!", Toast.LENGTH_SHORT).show();
+				Toast.makeText(getBaseContext(), "Le champ \"Num. Mobile ou Alias\" doit contenir entre 4 et 20 caractères!", Toast.LENGTH_SHORT).show();
 				return;
 			}
 
