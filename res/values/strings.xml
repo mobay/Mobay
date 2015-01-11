@@ -43,5 +43,8 @@
    <string name="title_activity_ask_for_money">Demander de l\'argent</string>
     <string name="title_activity_ask_for_money_nok">Demander de l\'argent \- erreur</string>
     <string name="title_activity_ask_for_money_ok">Demander de l\'argent \- yeah</string>
+    <string name="title_activity_accept_money_request">Accepter Demande Argent</string>
+    <string name="title_activity_accept_money_request_ok">Accepter Demande Argent Ok</string>
+    
 
 </resources>

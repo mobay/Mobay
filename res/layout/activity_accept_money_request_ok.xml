@@ -1,0 +1,71 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="56dp"
+        android:text="Votre compte a été débité de : " />
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="18dp"
+        android:text="Menu d&apos;accueil" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/deconnexion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="58dp"
+        android:text="Nouveau solde du compte : " />
+
+    <Button
+        android:id="@+id/deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/menuAccueil"
+        android:layout_alignBottom="@+id/menuAccueil"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/menuAccueil"
+        android:text="Déconnexion" />
+
+    <TextView
+        android:id="@+id/solde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/menuAccueil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="19dp"
+        android:text="0.0"/>
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Accepter un demande d'argent" />
+
+    <TextView
+        android:id="@+id/montantDebiter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="21dp"
+        android:text="0.0" />
+
+</RelativeLayout>

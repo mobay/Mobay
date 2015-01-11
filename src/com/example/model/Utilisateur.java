@@ -45,6 +45,8 @@ public class Utilisateur extends ParseObject
 		return listeUtilisateurs;
 	}
 	
+
+	
 	public static String crypterMdp(String mdp) throws Exception
 	{
 		MessageDigest md = MessageDigest.getInstance("MD5");

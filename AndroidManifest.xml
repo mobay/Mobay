@@ -113,6 +113,15 @@
             android:name=".AskForMoneyNokActivity"
             android:label="@string/title_activity_ask_for_money_nok" >
         </activity>
+        <activity
+            android:name=".AcceptMoneyRequestActivity"
+            android:label="@string/title_activity_accept_money_request" >
+        </activity>
+        <activity
+            android:name=".AcceptMoneyRequestOkActivity"
+            android:label="@string/title_activity_accept_money_request_ok" >
+        </activity>
+        
     </application>
 
 </manifest>

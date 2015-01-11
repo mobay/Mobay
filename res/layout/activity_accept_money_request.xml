@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <Button
+        android:id="@+id/deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/menuAccueil"
+        android:layout_alignBottom="@+id/menuAccueil"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="23dp"
+        android:text="Deconnexion" />
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginLeft="17dp"
+        android:layout_marginTop="70dp"
+        android:text="Menu d&apos;accueil" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:text="Accepter une demande d&apos;argent" />
+
+    <ListView
+        android:id="@+id/listMoneyRequestView"
+        android:layout_width="wrap_content"
+        android:layout_height="286dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true" >
+    </ListView>
+
+</RelativeLayout>

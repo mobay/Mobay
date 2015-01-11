@@ -154,8 +154,9 @@ public class AskForMoneyActivity extends Activity {
 		}
 	};
 
+	// Gérer le cas on ne peut pas se demander de l'argent à soi-même
 	private static void demandeMoney(double dbl) {
-		Operation op = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.RECEPTION, dbl, new Date(), utilisateurIndique.getObjectId());
+		Operation op = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.RECEPTION, dbl, new Date(), utilisateurIndique.getObjectId(), false);
 		op.saveInBackground();
 	}
 }

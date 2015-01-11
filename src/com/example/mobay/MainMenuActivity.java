@@ -39,7 +39,8 @@ public class MainMenuActivity extends Activity
 	
 	public void accepterDemande(View v)
 	{
-		
+		Intent acceptMoneyRequest = new Intent(this, AcceptMoneyRequestActivity.class);
+		startActivity(acceptMoneyRequest);
 	}
 	
 	public void gererCompte(View v)

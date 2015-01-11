@@ -24,7 +24,6 @@ import com.example.model.TypeOperation;
 import com.example.model.Utilisateur;
 import com.parse.ParseObject;
 //  pour valider un operation quand l'autre la recoit+valide après ça on débite le premier ==> Boolean
-// comment on fait si un user a plusieur demande d'argent a accepter ???  on fait une liste
 
 public class SendMoneyActivity extends Activity {
 	private static final String TAG = "SendMoneyActivity";
@@ -182,12 +181,12 @@ public class SendMoneyActivity extends Activity {
 		}
 	};
 
-	private static void envoiMoney(double dbl) {
+	public static void envoiMoney(double dbl) {
 		Compte cmptDest = null;
 		Compte cmptUserCour = null;
 
 		if (dbl != -1) {
-			Operation op = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.ENVOI, dbl, new Date(), utilisateurIndique.getObjectId());
+			Operation op = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.ENVOI, dbl, new Date(), utilisateurIndique.getObjectId(), false);
 			op.saveInBackground();
 			// on recupere le compte de l'utilisateur destinataire
 			listAccountUtilisateurDestinataire = Compte.getAccountWithUserObjectId(utilisateurIndique.getObjectId());

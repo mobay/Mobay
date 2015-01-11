@@ -27,10 +27,7 @@ private static final String TAG = "SendMoneyActivityOk";
 		deconnexion = (Button) findViewById(R.id.deconnexion);
 		solde= (TextView) findViewById(R.id.solde);
 		
-		Intent i = getIntent();
-		Log.d(TAG,"Solde utlisateurCourant SendMoneyOkActivity : "+ SendMoneyActivity.soldeUtilisateurCourant);
-		dbl = i.getDoubleExtra("soldeUtilisateurCourant", 0.0);
-		solde.setText(String.valueOf(dbl));
+ 
 		
 	deconnexion.setOnClickListener(new View.OnClickListener() {
 		@Override
