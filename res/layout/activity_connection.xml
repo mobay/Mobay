@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
@@ -12,44 +13,49 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="22dp"
         android:text="@string/connexion"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+id/inputMdpConnection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="148dp"
-        android:ems="10"
-        android:hint="@string/mdp"
-        android:inputType="textPassword" >
-
-        <requestFocus />
-    </EditText>
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor" />
 
     <EditText
         android:id="@+id/inputNumTelConnection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="66dp"
+        android:layout_above="@+id/inputMdpConnection"
+        android:layout_alignLeft="@+id/inputMdpConnection"
+        android:layout_marginBottom="48dp"
         android:ems="10"
         android:hint="@string/numTel"
-        android:inputType="phone" />
+        android:inputType="phone"
+        android:maxWidth="275dp"
+        android:textColor="@color/txtColor"
+        android:textColorHint="@color/greenColor" >
 
-    <Button
+        <requestFocus />
+    </EditText>
+
+    <EditText
+        android:id="@+id/inputMdpConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:hint="@string/mdp"
+        android:inputType="textPassword"
+        android:maxWidth="275dp"
+        android:textColor="@color/txtColor"
+        android:textColorHint="@color/greenColor" />
+
+    <ImageButton
         android:id="@+id/buttonValidateConnection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
         android:layout_below="@+id/inputMdpConnection"
-        android:layout_marginTop="54dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="38dp"
+        android:background="@color/backgroundColor"
+        android:contentDescription="@string/valider"
         android:onClick="validerConnexion"
-        android:text="@string/connexion" />
+        android:src="@drawable/validate" />
 
 </RelativeLayout>

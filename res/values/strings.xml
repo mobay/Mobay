@@ -22,6 +22,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="action_settings">Settings</string>
+    <string name="valider">Valider</string>
     <string name="envoiArgent">Envoyer de l\'argent</string>
     <string name="demandeArgent">Demander de l\'argent</string>
     <string name="accepterDemandeArgent">Accepter demande d\'argent</string>
@@ -40,11 +41,14 @@
     <string name="title_activity_send_money">SendMoneyActivity</string>
     <string name="title_activity_send_money_nok">SendMoneyActivityNok</string>
     <string name="title_activity_send_money_ok">SendMoneyActivityOk</string>   
-   <string name="title_activity_ask_for_money">Demander de l\'argent</string>
+    <string name="title_activity_ask_for_money">Demander de l\'argent</string>
     <string name="title_activity_ask_for_money_nok">Demander de l\'argent \- erreur</string>
     <string name="title_activity_ask_for_money_ok">Demander de l\'argent \- yeah</string>
     <string name="title_activity_accept_money_request">Accepter Demande Argent</string>
     <string name="title_activity_accept_money_request_ok">Accepter Demande Argent Ok</string>
     
+    <color name="backgroundColor">#339c3c</color>
+    <color name="greenColor">#8bc34a</color>
+    <color name="txtColor">#ffffff</color>
 
 </resources>

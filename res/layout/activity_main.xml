@@ -3,9 +3,23 @@
     android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     android:columnCount="2"
     android:orientation="horizontal"
     tools:context="${relativePackage}.${activityClass}" >
+
+    <Button
+        android:id="@+id/buttonConnection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/buttonInsciption"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:background="@xml/rounded_green"
+        android:minWidth="200dip"
+        android:onClick="onButtonConnexion"
+        android:text="@string/connexion"
+        android:textColor="@color/txtColor" />
 
     <TextView
         android:id="@+id/textView1"
@@ -13,28 +27,33 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="46dp"
         android:text="@string/app_name"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor"
+        android:textSize="32sp" />
 
-    <Button
-        android:id="@+id/buttonHistoriqueMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
         android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="88dp"
-        android:onClick="onButtonInscription"
-        android:text="@string/inscription" />
+        android:layout_marginTop="32dp"
+        android:contentDescription="@string/app_name"
+        android:src="@drawable/mobay" />
 
     <Button
-        android:id="@+id/buttonGererCompteMenu"
+        android:id="@+id/buttonInsciption"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonHistoriqueMenu"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="36dp"
-        android:onClick="onButtonConnexion"
-        android:text="@string/connexion" />
+        android:layout_alignLeft="@+id/buttonConnection"
+        android:layout_below="@+id/imageView1"
+        android:layout_marginTop="61dp"
+        android:background="@xml/rounded_green"
+        android:minWidth="200dip"
+        android:onClick="onButtonInscription"
+        android:text="@string/inscription"
+        android:textColor="@color/txtColor" />
 
 </RelativeLayout>

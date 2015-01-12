@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class ConnectionActivity extends Activity 
@@ -19,7 +20,7 @@ public class ConnectionActivity extends Activity
 	// Variables pour les widgets de la vue
 	EditText inputNumTel;
 	EditText inputMdp;
-	Button buttonConnection;
+	ImageButton buttonConnection;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -29,7 +30,7 @@ public class ConnectionActivity extends Activity
 		
 		inputNumTel = (EditText) findViewById(R.id.inputNumTelConnection);
 		inputMdp = (EditText) findViewById(R.id.inputMdpConnection);
-		buttonConnection = (Button) findViewById(R.id.buttonValidateConnection);
+		buttonConnection = (ImageButton) findViewById(R.id.buttonValidateConnection);
 	}
 	
 	public void validerConnexion(View view) throws Exception

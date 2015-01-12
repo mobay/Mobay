@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 public class InscriptionActivity extends Activity 
@@ -19,7 +20,7 @@ public class InscriptionActivity extends Activity
 	EditText inputPseudo;
 	EditText inputMdp;
 	EditText inputMdpAgain;
-	Button buttonInscription;
+	ImageButton buttonInscription;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) 
@@ -32,7 +33,7 @@ public class InscriptionActivity extends Activity
 		inputPseudo = (EditText) findViewById(R.id.inputPseudo);
 		inputMdp = (EditText) findViewById(R.id.inputMdp);
 		inputMdpAgain = (EditText) findViewById(R.id.inputMdpAgain);
-		buttonInscription = (Button) findViewById(R.id.buttonInscription);
+		buttonInscription = (ImageButton) findViewById(R.id.buttonValidateInscription);
 	}
 	
 	// Methode appelee lors du clic sur le bouton Inscription
