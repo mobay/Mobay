@@ -1,6 +1,7 @@
 package com.example.mobay;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -50,6 +51,9 @@ public class AcceptMoneyRequestActivity extends Activity {
 
 	static List<ParseObject> listAccountUtilisateurCourant = null;
 	static List<ParseObject> listMoneyRequestUtilisateurCourant = null;
+	
+	static List<ParseObject> listAccountUtilisateurDestinataire = null;
+	static double soldeDestinataire = 0;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -117,18 +121,30 @@ public class AcceptMoneyRequestActivity extends Activity {
 						if ((soldeUtilisateurCourant - montantDebiter) >= 0) {
 							Compte cmptUserCour = null;
 							Log.d(TAG, "Solde UtilisateurCourant avant operation : " + soldeUtilisateurCourant);
-							soldeUtilisateurCourant -= montantDebiter;
+							soldeUtilisateurCourant = Compte.arrondir((soldeUtilisateurCourant-montantDebiter), 2);
 							Log.d(TAG, "Solde UtilisateurCourant après operation : " + soldeUtilisateurCourant);
 							cmptUserCour = ((Compte) listAccountUtilisateurCourant.get(0));
 							cmptUserCour.setSolde(soldeUtilisateurCourant);
 							cmptUserCour.saveInBackground();
+							
+							
+							//on crédite le destinataire
+							listAccountUtilisateurDestinataire = Compte.getAccountWithUserObjectId(itemSelected.get("SenderObjectId"));
+							soldeDestinataire = (double) ((Compte) listAccountUtilisateurDestinataire.get(0)).getSolde();
+							
+							soldeDestinataire = Compte.arrondir((soldeDestinataire+montantDebiter),2);
+							
 
-							// on met l'operation a true pour dire qu'elle a été
+							// on met l'operation  de reception pour l'utilisateur destinataire a true pour dire qu'elle a été
 							// validé
 							Operation op = null;
 							op = (Operation) Operation.getOperationWithAttribut("objectId", itemSelected.get("OperationObjectId")).get(0);
 							op.setValidationOperation(true);
 							op.saveInBackground();
+							
+							// on fait une operation d'envoi pour l'uilisateur courant vers l'utilisateur destinataire
+							Operation opa = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.ENVOI, montantDebiter, new Date(), itemSelected.get("SenderObjectId") , true);
+							opa.saveInBackground();
 
 							listMoneyRequestViewListener.remove(position);
 							((BaseAdapter) adapter).notifyDataSetChanged();
@@ -161,6 +177,7 @@ public class AcceptMoneyRequestActivity extends Activity {
 
 	}
 
+	// permet de faire une liste de HashMap contenant la liste des operations de type Reception non validées (donc à false)
 	private static List<HashMap<String, String>> selectRequestSender(List<ParseObject> listMoneyRequest) {
 		List<HashMap<String, String>> listNumSenderValueRequest = new ArrayList<HashMap<String, String>>();
 		HashMap<String, String> element;
@@ -177,6 +194,7 @@ public class AcceptMoneyRequestActivity extends Activity {
 				element = new HashMap<String, String>();
 				senderObjectId = (String) ((Operation) listMoneyRequest.get(i)).getUtilisateurObjectId();
 				Log.d(TAG, "Sender ObjectId: " + senderObjectId);
+				element.put("SenderObjectId", senderObjectId);
 
 				operationObjectId = (String) ((Operation) listMoneyRequest.get(i)).getObjectId();
 				Log.d(TAG, "Sender ObjectId: " + operationObjectId);

@@ -90,7 +90,7 @@ public class AskForMoneyActivity extends Activity {
 	private OnClickListener validerListener = new OnClickListener() {
 		@Override
 		public void onClick(View v) {
-			String numOrAliasText = numOrAlias.getText().toString();
+			String numOrAliasText = numOrAlias.getText().toString().trim();
 			String montantText = montant.getText().toString();
 
 			Log.d(TAG, "Texte du champ NumOrAlias: " + numOrAliasText);
@@ -115,11 +115,19 @@ public class AskForMoneyActivity extends Activity {
 				return;
 			}
 
-			double montant = Double.parseDouble(montantText);
-			Log.d(TAG, "Montant parse en double : " + montant);
+			double montantDouble = Double.parseDouble(montantText);
+			Log.d(TAG, "Montant parse en double : " + montantDouble);
 			// Montant < 0
-			if (montant <= 0) {
+			if (montantDouble <= 0) {
 				Toast.makeText(getBaseContext(), "Le montant doit être supérieur à zéro!", Toast.LENGTH_SHORT).show();
+				return;
+			}
+			
+			// le montant ne peut comporter que deux chiffres arpès la virgule
+			String montantPattern = "^\\d+(.\\d{1,2})?$";
+			if (!montantText.matches(montantPattern)) {
+				montant.getText().clear();
+				Toast.makeText(getBaseContext(), "Le montant ne peut comporter que deux chiffres après la virgule!", Toast.LENGTH_SHORT).show();
 				return;
 			}
 
@@ -147,7 +155,7 @@ public class AskForMoneyActivity extends Activity {
 			}
 
 			Log.d(TAG, "Envoi d'argent : OK");
-			AskForMoneyActivity.demandeMoney(montant);
+			AskForMoneyActivity.demandeMoney(montantDouble);
 			Intent askForMoneyOk = new Intent(AskForMoneyActivity.this, AskForMoneyOkActivity.class);
 			startActivity(askForMoneyOk);
 

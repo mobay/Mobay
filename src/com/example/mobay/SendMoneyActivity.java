@@ -23,6 +23,7 @@ import com.example.model.Operation;
 import com.example.model.TypeOperation;
 import com.example.model.Utilisateur;
 import com.parse.ParseObject;
+
 //  pour valider un operation quand l'autre la recoit+valide après ça on débite le premier ==> Boolean
 
 public class SendMoneyActivity extends Activity {
@@ -186,8 +187,14 @@ public class SendMoneyActivity extends Activity {
 		Compte cmptUserCour = null;
 
 		if (dbl != -1) {
-			Operation op = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.ENVOI, dbl, new Date(), utilisateurIndique.getObjectId(), false);
+			// ici on fait un envoi de l'utilisateur courant à l'utilisateur
+			// indiqué
+			Operation op = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.ENVOI, dbl, new Date(), utilisateurIndique.getObjectId(), true);
 			op.saveInBackground();
+			// ici on fait une reception pour l'utilisateur indique de l'utilisateur courant 
+			Operation opa = new Operation(utilisateurIndique.getObjectId(), TypeOperation.RECEPTION, dbl, new Date(), Mobay.utilisateurCourant.getObjectId() , true);
+			opa.saveInBackground();
+
 			// on recupere le compte de l'utilisateur destinataire
 			listAccountUtilisateurDestinataire = Compte.getAccountWithUserObjectId(utilisateurIndique.getObjectId());
 		}
@@ -220,7 +227,7 @@ public class SendMoneyActivity extends Activity {
 
 			// on crédite le compte du destinataire
 			Log.d(TAG, "Solde Destinataire avant operation : " + soldeDestinataire);
-			soldeDestinataire += dbl;
+			soldeDestinataire = Compte.arrondir((soldeDestinataire + dbl), 2);
 			Log.d(TAG, "Solde Destinataire après operation : " + soldeDestinataire);
 			cmptDest = ((Compte) listAccountUtilisateurDestinataire.get(0));
 			cmptDest.setSolde(soldeDestinataire);
@@ -228,7 +235,7 @@ public class SendMoneyActivity extends Activity {
 
 			// on débite le compte de l'utilisateur courant
 			Log.d(TAG, "Solde UtilisateurCourant avant operation : " + soldeUtilisateurCourant);
-			soldeUtilisateurCourant -= dbl;
+			soldeUtilisateurCourant = Compte.arrondir((soldeUtilisateurCourant - dbl), 2);
 			Log.d(TAG, "Solde UtilisateurCourant après operation : " + soldeUtilisateurCourant);
 			cmptUserCour = ((Compte) listAccountUtilisateurCourant.get(0));
 			cmptUserCour.setSolde(soldeUtilisateurCourant);

@@ -64,4 +64,8 @@ public class Compte extends ParseObject
 		return listAccount;
 	}
 	
+	public static double arrondir(double A, int B) {
+		  return (double) ( (int) (A * Math.pow(10, B) + .5)) / Math.pow(10, B);
+		}
+	
 }
