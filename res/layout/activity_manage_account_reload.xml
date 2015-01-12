@@ -1,0 +1,135 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="56dp"
+        android:text="Montant de la recharge : "
+        android:textColor="@color/txtColor" />
+
+    <TextView
+        android:id="@+id/titreManageAccountReload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="19dp"
+        android:text="Gérer mon compte - Recharge"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/soixante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/quarante"
+        android:layout_below="@+id/quarante"
+        android:layout_marginTop="14dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:onClick="accepterDemande"
+        android:text="60 Euros"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/quatreVingt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/soixante"
+        android:layout_below="@+id/soixante"
+        android:layout_marginTop="15dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:onClick="gererCompte"
+        android:text="80 Euros"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/vingt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/quarante"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="22dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:onClick="envoiArgent"
+        android:text="20 Euros"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/quarante"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/vingt"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:onClick="demandeArgent"
+        android:text="40 Euros"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/cent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/quatreVingt"
+        android:layout_below="@+id/quatreVingt"
+        android:layout_marginTop="16dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:onClick="historique"
+        android:text="100 Euros"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/buttonGererIdentifiantsMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/cent"
+        android:layout_below="@+id/cent"
+        android:layout_marginTop="18dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:onClick="gererIdentifiants"
+        android:text="Menu Gérer mon compte"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/menuAccueil"
+        android:layout_alignBottom="@+id/menuAccueil"
+        android:layout_alignRight="@+id/titreManageAccountReload"
+        android:background="@xml/rounded_green"
+        android:text="@string/deco"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/titreManageAccountReload"
+        android:layout_below="@+id/buttonGererIdentifiantsMenu"
+        android:layout_marginTop="22dp"
+        android:background="@xml/rounded_green"
+        android:text="Menu d&apos;accueil"
+        android:textColor="@color/txtColor" />
+
+</RelativeLayout>

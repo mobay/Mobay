@@ -1,0 +1,65 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:columnCount="2"
+    android:orientation="horizontal"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="46dp"
+        android:text="Gérer Mon compte - Recharger"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor"
+        android:textSize="32sp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="28dp"
+        android:text="Nouveau solde du compte : "
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/solde"
+        android:layout_marginTop="37dp"
+        android:layout_toLeftOf="@+id/solde"
+        android:background="@xml/rounded_green"
+        android:text="Menu d&apos;accueil"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/menuAccueil"
+        android:layout_alignBottom="@+id/menuAccueil"
+        android:layout_toRightOf="@+id/solde"
+        android:background="@xml/rounded_green"
+        android:text="@string/deco"
+        android:textColor="@color/txtColor" />
+
+    <TextView
+        android:id="@+id/solde"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:text="0.0"
+        android:textColor="@color/txtColor" />
+
+</RelativeLayout>
