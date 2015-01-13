@@ -1,6 +1,12 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    android:columnCount="2"
+    android:orientation="horizontal"
+    tools:context="${relativePackage}.${activityClass}" >
 
     <Button
         android:id="@+id/deconnexion"
@@ -10,17 +16,9 @@
         android:layout_alignBottom="@+id/menuAccueil"
         android:layout_alignParentRight="true"
         android:layout_marginRight="23dp"
-        android:text="Deconnexion" />
-
-    <Button
-        android:id="@+id/menuAccueil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginLeft="17dp"
-        android:layout_marginTop="70dp"
-        android:text="Menu d&apos;accueil" />
+             android:background="@xml/rounded_green"
+        android:text="@string/deco"
+        android:textColor="@color/txtColor" />
 
     <TextView
         android:id="@+id/textView1"
@@ -29,7 +27,10 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp"
-        android:text="Accepter une demande d&apos;argent" />
+        android:text="Accepter une demande d&apos;argent" 
+         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor"
+        android:textSize="32sp"/>
 
     <ListView
         android:id="@+id/listMoneyRequestView"
@@ -38,5 +39,17 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true" >
     </ListView>
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/listMoneyRequestView"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="16dp"
+        android:background="@xml/rounded_green"
+        android:text="Menu d&apos;accueil"
+        android:textColor="@color/txtColor" />
 
 </RelativeLayout>
