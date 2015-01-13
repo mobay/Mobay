@@ -44,18 +44,7 @@
         android:textColor="@color/txtColor" />
 
     <Button
-        android:id="@+id/menuAccueil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/deconnexion"
-        android:layout_alignBottom="@+id/deconnexion"
-        android:layout_toLeftOf="@+id/solde"
-        android:background="@xml/rounded_green"
-        android:text="Menu d&apos;accueil"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/menuManageAccount"
+        android:id="@+id/manageAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/valider"
@@ -68,7 +57,7 @@
         android:textColor="@color/txtColor" />
 
     <TextView
-        android:id="@+id/solde"
+        android:id="@+id/montantRecharge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/textView2"
@@ -82,10 +71,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="56dp"
-        android:layout_toRightOf="@+id/solde"
+        android:layout_marginBottom="58dp"
+        android:layout_toRightOf="@+id/montantRecharge"
         android:background="@xml/rounded_green"
         android:text="@string/deco"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/deconnexion"
+        android:layout_alignBottom="@+id/deconnexion"
+        android:layout_toLeftOf="@+id/montantRecharge"
+        android:background="@xml/rounded_green"
+        android:text="Menu d&apos;accueil"
         android:textColor="@color/txtColor" />
 
 </RelativeLayout>

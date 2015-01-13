@@ -46,6 +46,13 @@
     <string name="title_activity_ask_for_money_ok">Demander de l\'argent \- yeah</string>
     <string name="title_activity_accept_money_request">Accepter Demande Argent</string>
     <string name="title_activity_accept_money_request_ok">Accepter Demande Argent Ok</string>
+    <string name="title_activity_manage_account">Gérer Mon Compte</string>   
+    <string name="title_activity_manage_account_reload">Gérer Mon Compte - Recharger</string>
+    <string name="title_activity_manage_account_reload_ok">Recharge effectuée</string>
+    <string name="title_activity_manage_account_reload_validation">Recharger Validation</string>
+    <string name="title_activity_manage_account_transfer">Gérer Mon Compte - Virer</string>
+    <string name="title_activity_manage_account_transfer_ok">Virement effectué</string>
+    
     
     <color name="backgroundColor">#339c3c</color>
     <color name="greenColor">#8bc34a</color>

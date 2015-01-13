@@ -121,7 +121,30 @@
             android:name=".AcceptMoneyRequestOkActivity"
             android:label="@string/title_activity_accept_money_request_ok" >
         </activity>
-        
+        <activity
+            android:name=".ManageAccountMenuActivity"
+            android:label="@string/title_activity_manage_account" >
+        </activity>
+        <activity
+            android:name=".ManageAccountReloadActivity"
+            android:label="@string/title_activity_manage_account_reload" >
+        </activity>
+        <activity
+            android:name=".ManageAccountReloadValidationActivity"
+            android:label="@string/title_activity_manage_account_reload_validation" >
+        </activity>
+        <activity
+            android:name=".ManageAccountReloadOkActivity"
+            android:label="@string/title_activity_manage_account_reload_ok" >
+        </activity>
+        <activity
+            android:name=".ManageAccountTransferActivity"
+            android:label="@string/title_activity_manage_account_transfer" >
+        </activity>
+        <activity
+            android:name=".ManageAccountTransferOkActivity"
+            android:label="@string/title_activity_manage_account_transfer_ok" >
+        </activity>
     </application>
 
 </manifest>
