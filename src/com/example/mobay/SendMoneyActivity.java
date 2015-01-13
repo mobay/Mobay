@@ -24,7 +24,7 @@ import com.example.model.TypeOperation;
 import com.example.model.Utilisateur;
 import com.parse.ParseObject;
 
-//  pour valider un operation quand l'autre la recoit+valide après ça on débite le premier ==> Boolean
+
 
 public class SendMoneyActivity extends Activity {
 	private static final String TAG = "SendMoneyActivity";
@@ -168,10 +168,10 @@ public class SendMoneyActivity extends Activity {
 				Toast.makeText(getBaseContext(), "Vous ne pouvez pas vous envoyer de l'argent à vous même", Toast.LENGTH_SHORT).show();
 				return;
 			}
-
+			SendMoneyActivity.envoiMoney(-1);
 			Log.d(TAG, "Envoi d'argent : OK");
-			SendMoneyActivity.envoiMoney(montantDouble);
 			if ((soldeUtilisateurCourant - montantDouble) >= 0) {
+				SendMoneyActivity.envoiMoney(montantDouble);
 				Intent sendMoneyOk = new Intent(SendMoneyActivity.this, SendMoneyOkActivity.class);
 				sendMoneyOk.putExtra("soldeUtilisateurCourant", soldeUtilisateurCourant);
 				startActivity(sendMoneyOk);

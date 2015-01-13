@@ -45,7 +45,8 @@ public class MainMenuActivity extends Activity
 	
 	public void gererCompte(View v)
 	{
-		
+		Intent manageAccountMenu = new Intent(this,ManageAccountMenuActivity.class);
+		startActivity(manageAccountMenu);
 	}
 	
 	public void historique(View v)

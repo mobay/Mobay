@@ -8,64 +8,55 @@ import android.util.Log;
 import com.parse.*;
 
 @ParseClassName("Compte")
-public class Compte extends ParseObject
-{
+public class Compte extends ParseObject {
 
 	private static final String TAG = "Model-Compte";
-	
-	public Compte()
-	{
+
+	public Compte() {
 		// Default constructor required
 	}
-	
-	public Compte(String utilisateurObjectId, double solde) 
-	{		
+
+	public Compte(String utilisateurObjectId, double solde) {
 		// On renseigne les attributs dans la table
 		put("utilisateurObjectId", utilisateurObjectId);
 		put("solde", solde);
 	}
-	
-	public String getUtilisateurObjectId() 
-	{
+
+	public String getUtilisateurObjectId() {
 		return getString("utilisateurObjectId");
 	}
-	//attention à la casse
-	public double getSolde() 
-	{
+
+	// attention à la casse
+	public double getSolde() {
 		return getDouble("solde");
 	}
 
-
-	public void setUtilisateurObjectId(String utilisateurObjectId) 
-	{
+	public void setUtilisateurObjectId(String utilisateurObjectId) {
 		put("utilisateurObjectId", utilisateurObjectId);
 	}
 
-	public void setSolde(double solde) 
-	{
+	public void setSolde(double solde) {
 		put("solde", solde);
 	}
-	
-	public static List<ParseObject> getAccountWithUserObjectId(String objectId)
-	{
+
+	public static List<ParseObject> getAccountWithUserObjectId(String objectId) {
 		List<ParseObject> listAccount = new ArrayList<ParseObject>();
-		
+
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Compte");
 		query.whereEqualTo("utilisateurObjectId", objectId);
-		try
-		{
+		try {
 			listAccount = query.find();
-		}
-		catch (ParseException e)
-		{
+		} catch (ParseException e) {
 			Log.e(TAG, e.getMessage());
 		}
-		
+
 		return listAccount;
 	}
-	
+
 	public static double arrondir(double A, int B) {
-		  return (double) ( (int) (A * Math.pow(10, B) + .5)) / Math.pow(10, B);
-		}
+		return (double) ((int) (A * Math.pow(10, B) + .5)) / Math.pow(10, B);
+	}
 	
+	
+
 }

@@ -15,7 +15,7 @@
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="46dp"
-        android:text="Gérer Mon compte - Recharger"
+        android:text="Gérer Mon compte - Virer"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/txtColor"
         android:textSize="32sp" />

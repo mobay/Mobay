@@ -89,6 +89,6 @@ public class ManageAccountMenuActivity extends Activity {
 			listAccountUtilisateurCourant = Compte.getAccountWithUserObjectId(userObjectId);
 			soldeUtilisateurCourant = (double) ((Compte) listAccountUtilisateurCourant.get(0)).getSolde();
 			
-			return String.valueOf(soldeUtilisateurCourant);
+			return String.valueOf(Compte.arrondir(soldeUtilisateurCourant, 2));
 		}
 }
