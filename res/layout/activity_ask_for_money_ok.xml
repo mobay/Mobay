@@ -21,35 +21,38 @@
         android:textColor="@color/txtColor" />
 
     <Button
-        android:id="@+id/menuAccueil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="18dp"
-        android:background="@xml/rounded_green"
-        android:text="Menu d&apos;accueil"
-        android:textColor="@color/txtColor" />
-
-    <Button
         android:id="@+id/deconnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/menuAccueil"
-        android:layout_alignBottom="@+id/menuAccueil"
-        android:layout_marginLeft="18dp"
-        android:layout_toRightOf="@+id/menuAccueil"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="77dp"
         android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
         android:text="@string/deco"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/deconnexion"
+        android:layout_alignLeft="@+id/deconnexion"
+        android:layout_marginBottom="41dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:text="Menu d&apos;accueil"
         android:textColor="@color/txtColor" />
 
     <TextView
         android:id="@+id/AskForMoneyH2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/menuAccueil"
+        android:layout_below="@+id/AskForMoneyH1"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="71dp"
         android:gravity="center"
         android:text="La demande d&apos;argent a été transmise"
         android:textColor="@color/txtColor" />

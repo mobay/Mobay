@@ -12,68 +12,71 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView1"
+        android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="56dp"
-        android:text="Envoyer de l'argent" 
+        android:layout_marginTop="35dp"
+        android:gravity="center"
+        android:text="Envoyer de l&apos;argent"
         android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center"
-        android:textColor="@color/txtColor"/>
+        android:textColor="@color/txtColor" />
 
     <TextView
         android:id="@+id/textView1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/textView3"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="47dp"
-        android:text="Votre demande ne peut aboutir. Le destinataire de la demande n&apos;est pas abooné à MMoobbayy" 
-                android:gravity="center"
-        android:textColor="@color/txtColor"/>
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/menuAccueil"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="52dp"
-        android:text="Nouveau solde du compte" 
-                android:gravity="center"
-        android:textColor="@color/txtColor"/>
-
-    <Button
-        android:id="@+id/menuAccueil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/deconnexion"
-        android:layout_alignBottom="@+id/deconnexion"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="16dp"
-               android:background="@xml/rounded_green"
-        android:text="Menu d&apos;accueil"
-        android:textColor="@color/txtColor"  />
-
-    <Button
-        android:id="@+id/deconnexion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="186dp"
-        android:layout_marginLeft="21dp"
-        android:layout_toRightOf="@+id/menuAccueil"
-                android:background="@xml/rounded_green"
-        android:text="@string/deco"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="46dp"
+        android:gravity="center"
+        android:text="Votre demande ne peut aboutir. Le destinataire de la demande n&apos;est pas abooné à MMoobbayy"
         android:textColor="@color/txtColor" />
 
     <TextView
         android:id="@+id/solde"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/textView1"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
+        android:layout_marginTop="118dp"
+        android:gravity="center"
         android:text="0.0"
-                android:gravity="center"
+        android:textColor="@color/txtColor" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/solde"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_marginBottom="46dp"
+        android:gravity="center"
+        android:text="Nouveau solde du compte"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="26dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:text="@string/deco"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/deconnexion"
+        android:layout_alignRight="@+id/deconnexion"
+        android:layout_marginBottom="23dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:text="Menu d&apos;accueil"
         android:textColor="@color/txtColor" />
 
 </RelativeLayout>
