@@ -2,16 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     tools:context="${relativePackage}.${activityClass}" >
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:text="@string/gererIdentifiants"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <EditText
         android:id="@+id/editTextNewMdpAgain"
@@ -22,7 +14,9 @@
         android:layout_alignParentRight="true"
         android:ems="10"
         android:hint="@string/nouveauMdpAgain"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="@color/txtColor"
+        android:textColorHint="@color/greenColor" />
 
     <EditText
         android:id="@+id/editTextModifyPseudo"
@@ -33,7 +27,9 @@
         android:layout_alignParentRight="true"
         android:layout_marginBottom="64dp"
         android:ems="10"
-        android:hint="@string/pseudoBrut" >
+        android:hint="@string/pseudoBrut"
+        android:textColor="@color/txtColor"
+        android:textColorHint="@color/greenColor" >
 
         <requestFocus />
     </EditText>
@@ -45,8 +41,11 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="60dp"
+        android:background="@xml/rounded_green"
+        android:minWidth="230dip"
         android:onClick="modifierMdp"
-        android:text="@string/modifierMdp" />
+        android:text="@string/modifierMdp"
+        android:textColor="@color/txtColor" />
 
     <EditText
         android:id="@+id/editTextNewMdp"
@@ -58,7 +57,9 @@
         android:layout_marginBottom="15dp"
         android:ems="10"
         android:hint="@string/nouveauMdp"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="@color/txtColor"
+        android:textColorHint="@color/greenColor" />
 
     <Button
         android:id="@+id/buttonModifyPseudo"
@@ -67,8 +68,11 @@
         android:layout_above="@+id/editTextNewMdp"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="110dp"
+        android:background="@xml/rounded_green"
+        android:minWidth="230dip"
         android:onClick="modifierPseudo"
-        android:text="@string/modifierPseudo" />
+        android:text="@string/modifierPseudo"
+        android:textColor="@color/txtColor" />
 
     <EditText
         android:id="@+id/editTextCurrentMdp"
@@ -80,6 +84,19 @@
         android:layout_marginBottom="16dp"
         android:ems="10"
         android:hint="@string/mdpActuel"
-        android:inputType="textPassword" />
+        android:inputType="textPassword"
+        android:textColor="@color/txtColor"
+        android:textColorHint="@color/greenColor" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/gererIdentifiants"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor" />
 
 </RelativeLayout>

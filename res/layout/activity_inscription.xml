@@ -71,8 +71,8 @@
         android:hint="@string/pseudo"
         android:minWidth="275dip"
         android:textColor="@color/txtColor"
-        android:textColorHint="@color/greenColor" />
-
+        android:textColorHint="@color/greenColor"  />
+    
     <EditText
         android:id="@+id/inputNumTel"
         android:layout_width="wrap_content"
@@ -85,7 +85,10 @@
         android:inputType="phone"
         android:minWidth="275dip"
         android:textColor="@color/txtColor"
-        android:textColorHint="@color/greenColor" />
+        android:textColorHint="@color/greenColor" >
+
+        <requestFocus />
+    </EditText>
 
     <EditText
         android:id="@+id/inputMdp"
@@ -99,10 +102,7 @@
         android:inputType="textPassword"
         android:minWidth="275dip"
         android:textColor="@color/txtColor"
-        android:textColorHint="@color/greenColor" >
-
-        <requestFocus />
-    </EditText>
+        android:textColorHint="@color/greenColor"/>
 
     <ImageButton
         android:id="@+id/buttonValidateInscription"

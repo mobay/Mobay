@@ -1,25 +1,35 @@
-<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/GridLayout1"
+    android:id="@+id/RelativeLayout1"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
     android:columnCount="1"
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/titleInsciption"
-        android:layout_column="0"
-        android:layout_gravity="center_horizontal|top"
-        android:layout_row="0"
-        android:text="AIDE" />
-
-    <TextView
         android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
         android:layout_column="0"
         android:layout_gravity="center"
+        android:layout_marginTop="215dp"
         android:layout_row="0"
         android:text="Pour plus d’informations concernant l’utilisation du service Monnaie Mobile, veuillez 
         vous connecter sur le site www.moneymobile.com ou téléphoner au 08 00 XX XX XX. Merci."
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor" />
 
-</GridLayout>
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="31dp"
+        android:text="@string/aide"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor" />
+
+</RelativeLayout>
