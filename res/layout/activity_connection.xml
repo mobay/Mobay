@@ -53,9 +53,8 @@
         android:layout_below="@+id/inputMdpConnection"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="38dp"
-        android:background="@color/backgroundColor"
+        android:background="@xml/rounded_validate"
         android:contentDescription="@string/valider"
-        android:onClick="validerConnexion"
-        android:src="@drawable/validate" />
+        android:onClick="validerConnexion" />
 
 </RelativeLayout>

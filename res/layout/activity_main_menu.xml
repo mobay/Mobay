@@ -6,20 +6,6 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <Button
-        android:id="@+id/buttonAccepterDemandeMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonDemandeArgentMenu"
-        android:layout_below="@+id/buttonDemandeArgentMenu"
-        android:layout_marginTop="10dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:onClick="accepterDemande"
-        android:text="@string/accepterDemandeArgent"
-        android:textColor="@color/txtColor" />
-
-    <Button
         android:id="@+id/buttonConnection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -27,80 +13,11 @@
         android:layout_below="@+id/buttonAccepterDemandeMenu"
         android:layout_marginTop="10dp"
         android:background="@xml/rounded_green"
+        android:drawableLeft="@drawable/compte"
         android:minHeight="20dp"
-        android:minWidth="235dp"
+        android:minWidth="155dp"
         android:onClick="gererCompte"
         android:text="@string/gererCompte"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/buttonInsciption"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonConnection"
-        android:layout_below="@+id/buttonConnection"
-        android:layout_marginTop="10dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:onClick="historique"
-        android:text="@string/historique"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/buttonGererIdentifiantsMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonInsciption"
-        android:layout_below="@+id/buttonInsciption"
-        android:layout_marginTop="10dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:onClick="gererIdentifiants"
-        android:text="@string/gererIdentifiants"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/buttonCoopterAmiMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonGererIdentifiantsMenu"
-        android:layout_below="@+id/buttonGererIdentifiantsMenu"
-        android:layout_marginTop="10dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:onClick="coopterAmi"
-        android:text="@string/coopterAmi"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/buttonAideMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonCoopterAmiMenu"
-        android:layout_below="@+id/buttonCoopterAmiMenu"
-        android:layout_marginTop="10dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:onClick="aide"
-        android:text="@string/aide"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/buttonDemandeArgentMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonEnvoiArgentMenu"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="10dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:onClick="demandeArgent"
-        android:text="@string/demandeArgent"
         android:textColor="@color/txtColor" />
 
     <TextView
@@ -115,31 +32,118 @@
         android:textColor="@color/txtColor" />
 
     <Button
-        android:id="@+id/buttonDecoMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonAideMenu"
-        android:layout_below="@+id/buttonAideMenu"
-        android:layout_marginTop="10dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:onClick="deconnexion"
-        android:text="@string/deco"
-        android:textColor="@color/txtColor" />
-
-    <Button
         android:id="@+id/buttonEnvoiArgentMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/buttonDemandeArgentMenu"
+        android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
-        android:layout_marginTop="27dp"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="37dp"
         android:background="@xml/rounded_green"
+        android:drawableLeft="@drawable/envoi"
         android:minHeight="20dp"
-        android:minWidth="235dp"
+        android:minWidth="155dp"
         android:onClick="envoiArgent"
         android:text="@string/envoiArgent"
         android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/buttonAccepterDemandeMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonEnvoiArgentMenu"
+        android:layout_alignRight="@+id/buttonDemandeArgentMenu"
+        android:layout_below="@+id/buttonEnvoiArgentMenu"
+        android:layout_marginTop="14dp"
+        android:background="@xml/rounded_green"
+        android:drawableLeft="@drawable/accepterdemande"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:onClick="accepterDemande"
+        android:text="@string/accepterDemandeArgent"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/buttonInsciption"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonDemandeArgentMenu"
+        android:layout_alignRight="@+id/buttonAccepterDemandeMenu"
+        android:layout_alignTop="@+id/buttonConnection"
+        android:background="@xml/rounded_green"
+        android:drawableLeft="@drawable/histo"
+        android:minHeight="20dp"
+        android:minWidth="155dp"
+        android:onClick="historique"
+        android:text="@string/historique"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/buttonGererIdentifiantsMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/buttonConnection"
+        android:layout_below="@+id/buttonConnection"
+        android:layout_marginTop="17dp"
+        android:background="@xml/rounded_green"
+        android:drawableLeft="@drawable/ids"
+        android:minHeight="20dp"
+        android:minWidth="155dp"
+        android:onClick="gererIdentifiants"
+        android:text="@string/gererIdentifiants"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/buttonCoopterAmiMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/buttonGererIdentifiantsMenu"
+        android:layout_alignBottom="@+id/buttonGererIdentifiantsMenu"
+        android:layout_alignLeft="@+id/buttonInsciption"
+        android:background="@xml/rounded_green"
+        android:drawableLeft="@drawable/coopter"
+        android:minHeight="20dp"
+        android:minWidth="155dp"
+        android:onClick="coopterAmi"
+        android:text="@string/coopterAmi"
+        android:textColor="@color/txtColor" />
+
+    <ImageButton
+        android:id="@+id/buttonAideMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/buttonGererIdentifiantsMenu"
+        android:layout_alignTop="@+id/buttonDecoMenu"
+        android:layout_marginRight="39dp"
+        android:background="@xml/rounded_help"
+        android:contentDescription="@string/aide"
+        android:onClick="aide" />
+
+    <Button
+        android:id="@+id/buttonDemandeArgentMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonAccepterDemandeMenu"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="5dp"
+        android:background="@xml/rounded_green"
+        android:drawableLeft="@drawable/demande"
+        android:minHeight="20dp"
+        android:minWidth="155dp"
+        android:onClick="demandeArgent"
+        android:text="@string/demandeArgent"
+        android:textColor="@color/txtColor" />
+
+    <ImageButton
+        android:id="@+id/buttonDecoMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/buttonCoopterAmiMenu"
+        android:layout_below="@+id/buttonCoopterAmiMenu"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="31dp"
+        android:background="@xml/rounded_exit"
+        android:contentDescription="@string/deco"
+        android:onClick="deconnexion" />
 
 </RelativeLayout>

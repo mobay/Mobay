@@ -111,9 +111,8 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="91dp"
-        android:background="@color/backgroundColor"
+        android:background="@xml/rounded_validate"
         android:contentDescription="@string/valider"
-        android:onClick="validerInscription"
-        android:src="@drawable/validate" />
+        android:onClick="validerInscription" />
 
 </RelativeLayout>
