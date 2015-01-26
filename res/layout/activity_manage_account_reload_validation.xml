@@ -30,32 +30,6 @@
         android:text="Montant de la recharge : "
         android:textColor="@color/txtColor" />
 
-    <Button
-        android:id="@+id/valider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/deconnexion"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="86dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:text="Valider"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/manageAccount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/valider"
-        android:layout_alignLeft="@+id/valider"
-        android:layout_marginBottom="22dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:text="Menu Gérer mon compte"
-        android:textColor="@color/txtColor" />
-
     <TextView
         android:id="@+id/montantRecharge"
         android:layout_width="wrap_content"
@@ -70,10 +44,12 @@
         android:id="@+id/deconnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/menuAccueil"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="58dp"
-        android:layout_toRightOf="@+id/montantRecharge"
+        android:layout_marginBottom="15dp"
         android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
         android:text="@string/deco"
         android:textColor="@color/txtColor" />
 
@@ -81,11 +57,39 @@
         android:id="@+id/menuAccueil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/deconnexion"
-        android:layout_alignBottom="@+id/deconnexion"
-        android:layout_toLeftOf="@+id/montantRecharge"
+        android:layout_above="@+id/deconnexion"
+        android:layout_alignLeft="@+id/valider"
+        android:layout_marginBottom="17dp"
         android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
         android:text="Menu d&apos;accueil"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/valider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/montantRecharge"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:text="Valider"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/manageAccount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/valider"
+        android:layout_below="@+id/valider"
+        android:layout_marginTop="20dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:text="Menu Gérer mon compte"
         android:textColor="@color/txtColor" />
 
 </RelativeLayout>
