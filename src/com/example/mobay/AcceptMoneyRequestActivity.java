@@ -49,10 +49,10 @@ public class AcceptMoneyRequestActivity extends Activity {
 	int position;
 	HashMap<String, String> itemSelected;
 
-	static List<ParseObject> listAccountUtilisateurCourant = null;
+	static Compte accountUtilisateurCourant = null;
 	static List<ParseObject> listMoneyRequestUtilisateurCourant = null;
 	
-	static List<ParseObject> listAccountUtilisateurDestinataire = null;
+	static Compte accountUtilisateurDestinataire = null;
 	static double soldeDestinataire = 0;
 
 	@Override
@@ -68,7 +68,9 @@ public class AcceptMoneyRequestActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(AcceptMoneyRequestActivity.this, MainActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
+				finish();
 			}
 
 		});
@@ -76,6 +78,7 @@ public class AcceptMoneyRequestActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(AcceptMoneyRequestActivity.this, MainMenuActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
 				finish();
 			}
@@ -113,30 +116,26 @@ public class AcceptMoneyRequestActivity extends Activity {
 
 				alert.setPositiveButton("Valider !", new OnClickListener() {
 
-					public void onClick(DialogInterface dialog, int which) {
+					public void onClick(DialogInterface dialog, int which) 
+					{
+						accountUtilisateurCourant = Mobay.compteUtilisateurCourant;
+						soldeUtilisateurCourant = accountUtilisateurCourant.getSolde();
 
-						listAccountUtilisateurCourant = Compte.getAccountWithUserObjectId(Mobay.utilisateurCourant.getObjectId());
-						soldeUtilisateurCourant = (double) ((Compte) listAccountUtilisateurCourant.get(0)).getSolde();
-
-						if ((soldeUtilisateurCourant - montantDebiter) >= 0) {
-							Compte cmptUserCour = null;
+						if ((soldeUtilisateurCourant - montantDebiter) >= 0) 
+						{
 							Log.d(TAG, "Solde UtilisateurCourant avant operation : " + soldeUtilisateurCourant);
 							soldeUtilisateurCourant = Compte.arrondir((soldeUtilisateurCourant-montantDebiter), 2);
 							Log.d(TAG, "Solde UtilisateurCourant après operation : " + soldeUtilisateurCourant);
-							cmptUserCour = ((Compte) listAccountUtilisateurCourant.get(0));
-							cmptUserCour.setSolde(soldeUtilisateurCourant);
-							cmptUserCour.saveInBackground();
+							accountUtilisateurCourant.setSolde(soldeUtilisateurCourant);
+							accountUtilisateurCourant.saveInBackground();
 							
-							
-							//on crédite le destinataire
-							listAccountUtilisateurDestinataire = Compte.getAccountWithUserObjectId(itemSelected.get("SenderObjectId"));
-							soldeDestinataire = (double) ((Compte) listAccountUtilisateurDestinataire.get(0)).getSolde();
-							
-							soldeDestinataire = Compte.arrondir((soldeDestinataire+montantDebiter),2);
+							//On crédite le destinataire
+							accountUtilisateurDestinataire = Compte.getAccountWithUserObjectId(itemSelected.get("SenderObjectId"));
+							soldeDestinataire = accountUtilisateurDestinataire.getSolde();
+							soldeDestinataire = Compte.arrondir((soldeDestinataire + montantDebiter),2);
 							
 
-							// on met l'operation  de reception pour l'utilisateur destinataire a true pour dire qu'elle a été
-							// validé
+							// on met l'operation  de reception pour l'utilisateur destinataire a true pour dire qu'elle a été validée
 							Operation op = null;
 							op = (Operation) Operation.getOperationWithAttribut("objectId", itemSelected.get("OperationObjectId")).get(0);
 							op.setValidationOperation(true);

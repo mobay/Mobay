@@ -1,5 +1,7 @@
 package com.example.mobay;
 
+import com.example.model.Mobay;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -28,7 +30,7 @@ private static final String TAG = "SendMoneyActivityOk";
 		solde= (TextView) findViewById(R.id.solde);
 		
 		Intent i = getIntent();
-		Log.d(TAG, "Solde utlisateurCourant SendMoneyOkActivity : " + SendMoneyActivity.soldeUtilisateurCourant);
+		Log.d(TAG, "Solde utlisateurCourant SendMoneyOkActivity : " + Mobay.compteUtilisateurCourant.getSolde());
 		dbl = i.getDoubleExtra("soldeUtilisateurCourant", 0.0);
 		solde.setText(String.valueOf(dbl));
  
@@ -37,18 +39,20 @@ private static final String TAG = "SendMoneyActivityOk";
 		@Override
 		public void onClick(View v) {
 			Intent deconnexion = new Intent(SendMoneyOkActivity.this, MainActivity.class);
+			deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(deconnexion);
 			finish();
 		}
-
 	});
+	
 	menuAccueil.setOnClickListener(new View.OnClickListener() {
 		@Override
 		public void onClick(View v) {
 			Intent mainMenu = new Intent(SendMoneyOkActivity.this, MainMenuActivity.class);
+			mainMenu.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(mainMenu);
+			finish();
 		}
-
 	});
 	}
 }

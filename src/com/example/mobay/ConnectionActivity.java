@@ -1,5 +1,6 @@
 package com.example.mobay;
 
+import com.example.model.Compte;
 import com.example.model.Mobay;
 import com.example.model.Utilisateur;
 
@@ -85,14 +86,17 @@ public class ConnectionActivity extends Activity
 		Log.d(TAG, "Connexion de: " + utilisateurCourant.getNumTel());
 		Toast.makeText(getBaseContext(), "Données correctes, connexion réussie!", Toast.LENGTH_SHORT).show();
 		
-		// Attribution de la variable de session pour l'utilisateur courant
+		// Attribution des 'variables de session' pour l'utilisateur courant
 		Mobay.utilisateurCourant = utilisateurCourant;
+		if(Compte.getAccountWithUserObjectId(utilisateurCourant.getObjectId()) != null)
+			Mobay.compteUtilisateurCourant = Compte.getAccountWithUserObjectId(utilisateurCourant.getObjectId());
 		
 		// Acces au menu principal
 		Intent intentMainMenu = new Intent(this, MainMenuActivity.class);
+		intentMainMenu.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 		startActivity(intentMainMenu);
 		
 		// La connexion etant effectuee, on met fin a l'activite (on ne pourra plus y revenir avec le bouton Precedent)
-		finish();
+		finish();		
 	}
 }

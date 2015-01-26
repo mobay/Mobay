@@ -1,10 +1,14 @@
 package com.example.mobay;
 
+import com.example.model.Compte;
 import com.example.model.Utilisateur;
+import com.parse.ParseException;
+import com.parse.SaveCallback;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -113,8 +117,27 @@ public class InscriptionActivity extends Activity
 		}
 		
 		// On peut creer l'utilisateur dans Parse
-		Utilisateur user = new Utilisateur(pseudo, numTel, Utilisateur.crypterMdp(mdp), "");
-		user.saveInBackground();
+		final Utilisateur user = new Utilisateur(pseudo, numTel, Utilisateur.crypterMdp(mdp), "");
+		// Et on prend soin de creer un compte lie une fois l'utilisateur bien sauvegarde dans la base
+		user.saveInBackground(new SaveCallback(){
+			@Override
+			public void done(ParseException e) 
+			{
+				if(e == null)
+				{
+					// Ainsi qu'un compte au solde nul
+					Compte compte = new Compte(user.getObjectId(), 0);
+					compte.saveInBackground();
+				}
+				else
+				{
+					Log.w(TAG, "Erreur lors de la sauvegarde de l'utilisateur dans la base.");
+					e.printStackTrace();
+					return;
+				}
+				
+			}
+		});
 		
 		Toast.makeText(getBaseContext(), "Vous avez bien créé un compte sur Mobay! Veuillez désormais vous connecter.", Toast.LENGTH_SHORT).show();
 		

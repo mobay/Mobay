@@ -20,10 +20,7 @@ public class ManageAccountMenuActivity extends Activity {
 	Button menuAccueil = null;
 	Button deconnexion = null;
 	Button transfer = null;
-	static double soldeUtilisateurCourant = 0;
 	TextView soldeView = null;
-	static List<ParseObject> listAccountUtilisateurCourant = null;
-
 
 		private static final String TAG = "ManageAccountAcitivity";
 
@@ -44,7 +41,9 @@ public class ManageAccountMenuActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					Intent deconnexion = new Intent(ManageAccountMenuActivity.this, MainActivity.class);
+					deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 					startActivity(deconnexion);
+					finish();
 				}
 
 			});
@@ -52,6 +51,7 @@ public class ManageAccountMenuActivity extends Activity {
 				@Override
 				public void onClick(View v) {
 					Intent deconnexion = new Intent(ManageAccountMenuActivity.this, MainMenuActivity.class);
+					deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 					startActivity(deconnexion);
 					finish();
 				}
@@ -84,11 +84,7 @@ public class ManageAccountMenuActivity extends Activity {
 		
 		}
 		
-		public static String whatIsMyBalance (String userObjectId){
-			
-			listAccountUtilisateurCourant = Compte.getAccountWithUserObjectId(userObjectId);
-			soldeUtilisateurCourant = (double) ((Compte) listAccountUtilisateurCourant.get(0)).getSolde();
-			
-			return String.valueOf(Compte.arrondir(soldeUtilisateurCourant, 2));
+		public static String whatIsMyBalance (String userObjectId){			
+			return String.valueOf(Compte.arrondir(Mobay.compteUtilisateurCourant.getSolde(), 2));
 		}
 }

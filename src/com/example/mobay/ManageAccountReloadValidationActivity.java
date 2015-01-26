@@ -41,7 +41,9 @@ public class ManageAccountReloadValidationActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(ManageAccountReloadValidationActivity.this, MainActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
+				finish();
 			}
 
 		});
@@ -49,6 +51,7 @@ public class ManageAccountReloadValidationActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(ManageAccountReloadValidationActivity.this, MainMenuActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
 				finish();
 			}

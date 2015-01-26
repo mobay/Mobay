@@ -23,7 +23,6 @@ public class ManageAccountReloadOkActivity extends Activity {
 	Button deconnexion = null;
 	TextView solde;
 	static double soldeUtilisateurCourant = 0;
-	static List<ParseObject> listAccountUtilisateurCourant = null;
 	String dbl;
 
 	protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +42,9 @@ public class ManageAccountReloadOkActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(ManageAccountReloadOkActivity.this, MainActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
+				finish();
 			}
 
 		});
@@ -51,6 +52,7 @@ public class ManageAccountReloadOkActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(ManageAccountReloadOkActivity.this, MainMenuActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
 				finish();
 			}
@@ -59,11 +61,9 @@ public class ManageAccountReloadOkActivity extends Activity {
 
 	}
 
-	public static String reloadAccount(String dbl) {
-
-		listAccountUtilisateurCourant = Compte.getAccountWithUserObjectId(Mobay.utilisateurCourant.getObjectId());
-		soldeUtilisateurCourant = (double) ((Compte) listAccountUtilisateurCourant.get(0)).getSolde();
-
+	public static String reloadAccount(String dbl) 
+	{
+		soldeUtilisateurCourant = Mobay.compteUtilisateurCourant.getSolde();
 		soldeUtilisateurCourant += Double.parseDouble(dbl);
 		Compte.arrondir(soldeUtilisateurCourant, 2);
 		// plus arrondir et valider dans parse
@@ -71,10 +71,8 @@ public class ManageAccountReloadOkActivity extends Activity {
 		Operation op = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.RECHARGE, Double.parseDouble(dbl), new Date(), Mobay.utilisateurCourant.getObjectId(), true);
 		op.saveInBackground();
 
-		Compte cmptUserCour = null;
-		cmptUserCour = ((Compte) listAccountUtilisateurCourant.get(0));
-		cmptUserCour.setSolde(soldeUtilisateurCourant);
-		cmptUserCour.saveInBackground();
+		Mobay.compteUtilisateurCourant.setSolde(soldeUtilisateurCourant);
+		Mobay.compteUtilisateurCourant.saveInBackground();
 
 		return String.valueOf(soldeUtilisateurCourant);
 	}

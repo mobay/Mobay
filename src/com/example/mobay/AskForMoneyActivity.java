@@ -1,7 +1,6 @@
 package com.example.mobay;
 
 import java.util.Date;
-import java.util.List;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -19,7 +18,6 @@ import com.example.model.Mobay;
 import com.example.model.Operation;
 import com.example.model.TypeOperation;
 import com.example.model.Utilisateur;
-import com.parse.ParseObject;
 
 public class AskForMoneyActivity extends Activity {
 	private static final String TAG = "SendMoneyActivity";
@@ -29,7 +27,6 @@ public class AskForMoneyActivity extends Activity {
 	Button deconnexion = null;
 	static EditText numOrAlias = null;
 	static EditText montant = null;
-
 
 	static Utilisateur utilisateurIndique = null;
 
@@ -43,49 +40,27 @@ public class AskForMoneyActivity extends Activity {
 		montant = (EditText) findViewById(R.id.montant);
 		numOrAlias = (EditText) findViewById(R.id.numOrAlias);
 
-		numOrAlias.addTextChangedListener(textWatcher);
-		montant.addTextChangedListener(textWatcher);
-
 		deconnexion.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(AskForMoneyActivity.this, MainActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
+				finish();
 			}
-
 		});
+		
 		menuAccueil.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(AskForMoneyActivity.this, MainMenuActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
 				finish();
 			}
-
 		});
 		valider.setOnClickListener(validerListener);
 	}
-
-	// détecter les caracteres spéciaux avec regexs
-	private TextWatcher textWatcher = new TextWatcher() {
-		@Override
-		public void afterTextChanged(Editable s) {
-			// TODO Auto-generated method stub
-
-		}
-
-		@Override
-		public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-			// TODO Auto-generated method stub
-
-		}
-
-		@Override
-		public void onTextChanged(CharSequence s, int start, int before, int count) {
-			// TODO Auto-generated method stub
-
-		}
-	};
 
 	private OnClickListener validerListener = new OnClickListener() {
 		@Override

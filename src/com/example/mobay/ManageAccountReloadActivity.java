@@ -109,16 +109,13 @@ public class ManageAccountReloadActivity extends Activity{
 
 		});
 		
-		
-		
-		
-		
-		
 		deconnexion.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(ManageAccountReloadActivity.this, MainActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
+				finish();
 			}
 
 		});
@@ -126,6 +123,7 @@ public class ManageAccountReloadActivity extends Activity{
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(ManageAccountReloadActivity.this, MainMenuActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
 				finish();
 			}

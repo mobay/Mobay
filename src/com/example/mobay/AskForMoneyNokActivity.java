@@ -28,6 +28,7 @@ private static final String TAG = "AskForMoneyNokActivity";
 		@Override
 		public void onClick(View v) {
 			Intent deconnexion = new Intent(AskForMoneyNokActivity.this, MainActivity.class);
+			deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(deconnexion);
 			finish();
 		}
@@ -37,7 +38,9 @@ private static final String TAG = "AskForMoneyNokActivity";
 		@Override
 		public void onClick(View v) {
 			Intent mainMenu = new Intent(AskForMoneyNokActivity.this, MainMenuActivity.class);
+			mainMenu.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 			startActivity(mainMenu);
+			finish();
 		}
 
 	});

@@ -39,7 +39,7 @@ public class Compte extends ParseObject {
 		put("solde", solde);
 	}
 
-	public static List<ParseObject> getAccountWithUserObjectId(String objectId) {
+	public static Compte getAccountWithUserObjectId(String objectId) {
 		List<ParseObject> listAccount = new ArrayList<ParseObject>();
 
 		ParseQuery<ParseObject> query = ParseQuery.getQuery("Compte");
@@ -50,13 +50,10 @@ public class Compte extends ParseObject {
 			Log.e(TAG, e.getMessage());
 		}
 
-		return listAccount;
+		return (listAccount.isEmpty()) ? null : (Compte) listAccount.get(0);
 	}
 
 	public static double arrondir(double A, int B) {
 		return (double) ((int) (A * Math.pow(10, B) + .5)) / Math.pow(10, B);
 	}
-	
-	
-
 }

@@ -28,10 +28,10 @@ public class ManageAccountTransferOkActivity extends Activity {
 	TextView montant = null;
 	double dbl;
 	static double soldeUtilisateurCourant = 0;
-	static List<ParseObject> listAccountUtilisateurCourant = null;
 
 	@Override
-	protected void onCreate(Bundle savedInstanceState) {
+	protected void onCreate(Bundle savedInstanceState) 
+	{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_manage_account_transfer_ok);
 
@@ -43,23 +43,17 @@ public class ManageAccountTransferOkActivity extends Activity {
 		dbl = i.getDoubleExtra("montantDebiter", 0.0);
 		Log.d(TAG,"Montant a débiter : "+dbl);
 		
-		listAccountUtilisateurCourant = Compte.getAccountWithUserObjectId(Mobay.utilisateurCourant.getObjectId());
-		soldeUtilisateurCourant = (double) ((Compte) listAccountUtilisateurCourant.get(0)).getSolde();
-		
-	
-	
-		
-			montant.setText(ManageAccountTransferOkActivity.discardAccount(dbl,getApplicationContext()));
+		soldeUtilisateurCourant = Mobay.compteUtilisateurCourant.getSolde();
 
-		
-		
-
+		montant.setText(ManageAccountTransferOkActivity.discardAccount(dbl,getApplicationContext()));
 
 		deconnexion.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(ManageAccountTransferOkActivity.this, MainActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
+				finish();
 			}
 
 		});
@@ -67,6 +61,7 @@ public class ManageAccountTransferOkActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(ManageAccountTransferOkActivity.this, MainMenuActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
 				finish();
 			}
@@ -86,10 +81,8 @@ public class ManageAccountTransferOkActivity extends Activity {
 		Operation opa = new Operation(Mobay.utilisateurCourant.getObjectId(), TypeOperation.VIREMENT, dbl, new Date(), Mobay.utilisateurCourant.getObjectId(), true);
 		opa.saveInBackground();
 		
-		Compte cmptUserCour = null;
-		cmptUserCour = ((Compte) listAccountUtilisateurCourant.get(0));
-		cmptUserCour.setSolde(soldeUtilisateurCourant);
-		cmptUserCour.saveInBackground();
+		Mobay.compteUtilisateurCourant.setSolde(soldeUtilisateurCourant);
+		Mobay.compteUtilisateurCourant.saveInBackground();
 
 		return String.valueOf(soldeUtilisateurCourant);
 

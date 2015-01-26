@@ -41,7 +41,9 @@ public class AcceptMoneyRequestOkActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(AcceptMoneyRequestOkActivity.this, MainActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
+				finish();
 			}
 
 		});
@@ -49,6 +51,7 @@ public class AcceptMoneyRequestOkActivity extends Activity {
 			@Override
 			public void onClick(View v) {
 				Intent deconnexion = new Intent(AcceptMoneyRequestOkActivity.this, MainMenuActivity.class);
+				deconnexion.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK|Intent.FLAG_ACTIVITY_NEW_TASK);
 				startActivity(deconnexion);
 				finish();
 			}
