@@ -29,16 +29,20 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".MainActivity"
-            android:label="@string/app_name" >
+            android:label="@string/app_name" 
+            android:screenOrientation="portrait">
+            
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity
             android:name=".HelpActivity"
-            android:label="@string/title_activity_help" >
+            android:label="@string/title_activity_help" 
+            android:screenOrientation="portrait">
         </activity>
 
         <service android:name="com.parse.PushService" />
@@ -71,88 +75,129 @@
 
         <activity
             android:name=".InscriptionActivity"
-            android:label="@string/title_activity_inscription" >
-        </activity>
-        <activity
-            android:name=".ConnectionActivity"
-            android:label="@string/title_activity_connection" >
-        </activity>
-        <activity
-            android:name=".MainMenuActivity"
-            android:label="@string/title_activity_main_menu" >
-        </activity>
-        <activity
-            android:name=".TestActivity"
-            android:label="@string/title_activity_test" >
-        </activity>
-        <activity
-            android:name=".IDsActivity"
-            android:label="@string/title_activity_ids" >
-        </activity>
-        <activity
-            android:name=".SendMoneyActivity"
-            android:label="@string/title_activity_send_money" >
-        </activity>
-        <activity
-            android:name=".SendMoneyNokActivity"
-            android:label="@string/title_activity_send_money_nok" >
-        </activity>
-        <activity
-            android:name=".SendMoneyOkActivity"
-            android:label="@string/title_activity_send_money_ok" >
-        </activity>
-        <activity
-            android:name=".AskForMoneyActivity"
-            android:label="@string/title_activity_ask_for_money" >
-        </activity>
-        <activity
-            android:name=".AskForMoneyOkActivity"
-            android:label="@string/title_activity_ask_for_money_ok" >
-        </activity>
-        <activity
-            android:name=".AskForMoneyNokActivity"
-            android:label="@string/title_activity_ask_for_money_nok" >
-        </activity>
-        <activity
-            android:name=".AcceptMoneyRequestActivity"
-            android:label="@string/title_activity_accept_money_request" >
-        </activity>
-        <activity
-            android:name=".AcceptMoneyRequestOkActivity"
-            android:label="@string/title_activity_accept_money_request_ok" >
-        </activity>
-        <activity
-            android:name=".ManageAccountMenuActivity"
-            android:label="@string/title_activity_manage_account" >
-        </activity>
-        <activity
-            android:name=".ManageAccountReloadActivity"
-            android:label="@string/title_activity_manage_account_reload" >
+            android:label="@string/title_activity_inscription" 
+            android:screenOrientation="portrait">
         </activity>
         
         <activity
-            android:name=".ManageAccountReloadValidationActivity"
-            android:label="@string/title_activity_manage_account_reload_validation" >
+            android:name=".ConnectionActivity"
+            android:label="@string/title_activity_connection" 
+            android:screenOrientation="portrait">
         </activity>
+        
+        <activity
+            android:name=".MainMenuActivity"
+            android:label="@string/title_activity_main_menu" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".TestActivity"
+            android:label="@string/title_activity_test" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".IDsActivity"
+            android:label="@string/title_activity_ids" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".SendMoneyActivity"
+            android:label="@string/title_activity_send_money" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".SendMoneyNokActivity"
+            android:label="@string/title_activity_send_money_nok" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".SendMoneyOkActivity"
+            android:label="@string/title_activity_send_money_ok" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".AskForMoneyActivity"
+            android:label="@string/title_activity_ask_for_money" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".AskForMoneyOkActivity"
+            android:label="@string/title_activity_ask_for_money_ok" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".AskForMoneyNokActivity"
+            android:label="@string/title_activity_ask_for_money_nok" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".AcceptMoneyRequestActivity"
+            android:label="@string/title_activity_accept_money_request" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".AcceptMoneyRequestOkActivity"
+            android:label="@string/title_activity_accept_money_request_ok" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".ManageAccountMenuActivity"
+            android:label="@string/title_activity_manage_account" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        <activity
+            android:name=".ManageAccountReloadActivity"
+            android:label="@string/title_activity_manage_account_reload" 
+            android:screenOrientation="portrait">
+        </activity>
+        
+        
+        <activity
+            android:name=".ManageAccountReloadValidationActivity"
+            android:label="@string/title_activity_manage_account_reload_validation" 
+            android:screenOrientation="portrait">
+        </activity>
+        
         <activity
             android:name=".ManageAccountReloadOkActivity"
-            android:label="@string/title_activity_manage_account_reload_ok" >
+            android:label="@string/title_activity_manage_account_reload_ok" 
+            android:screenOrientation="portrait">
         </activity>
+        
         <activity
             android:name=".ManageAccountTransferActivity"
-            android:label="@string/title_activity_manage_account_transfer" >
+            android:label="@string/title_activity_manage_account_transfer" 
+            android:screenOrientation="portrait">
         </activity>
+        
         <activity
             android:name=".ManageAccountTransferOkActivity"
-            android:label="@string/title_activity_manage_account_transfer_ok" >
+            android:label="@string/title_activity_manage_account_transfer_ok" 
+            android:screenOrientation="portrait">
         </activity>
+        
         <activity
             android:name=".FriendActivity"
-            android:label="@string/title_activity_friend" >
+            android:label="@string/title_activity_friend" 
+            android:screenOrientation="portrait">
         </activity>
+        
         <activity
             android:name=".HistoricActivity"
-            android:label="@string/title_activity_historic" >
+            android:label="@string/title_activity_historic" 
+            android:screenOrientation="portrait">
         </activity>
         
     </application>
