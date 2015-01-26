@@ -17,23 +17,6 @@
         android:textColor="@color/txtColor" />
 
     <EditText
-        android:id="@+id/inputNumTelConnection"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/inputMdpConnection"
-        android:layout_alignLeft="@+id/inputMdpConnection"
-        android:layout_marginBottom="48dp"
-        android:ems="10"
-        android:hint="@string/numTel"
-        android:inputType="phone"
-        android:maxWidth="275dp"
-        android:textColor="@color/txtColor"
-        android:textColorHint="@color/greenColor" >
-
-        <requestFocus />
-    </EditText>
-
-    <EditText
         android:id="@+id/inputMdpConnection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -56,5 +39,20 @@
         android:background="@xml/rounded_validate"
         android:contentDescription="@string/valider"
         android:onClick="validerConnexion" />
+
+    <EditText
+        android:id="@+id/loginNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/inputMdpConnection"
+        android:layout_alignLeft="@+id/inputMdpConnection"
+        android:layout_marginBottom="40dp"
+        android:ems="10"
+        android:hint="@string/pseudo_num"
+        android:textColor="@color/txtColor"
+        android:textColorHint="@color/greenColor" >
+
+        <requestFocus />
+    </EditText>
 
 </RelativeLayout>

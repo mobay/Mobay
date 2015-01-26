@@ -56,6 +56,7 @@
     <string name="title_activity_manage_account_transfer_ok">Virement effectué</string>
     <string name="title_activity_historic">Consulter l\'historique</string>
     <string name="title_activity_friend">Coopter un ami</string>
+    <string name="pseudo_num">Numéro / Pseudo</string>
     <color name="backgroundColor">#339c3c</color>
     <color name="greenColor">#8bc34a</color>
     <color name="txtColor">#ffffff</color>

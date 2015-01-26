@@ -18,7 +18,7 @@ public class ConnectionActivity extends Activity
 	private static final String TAG = "ConnectionActivity";
 	
 	// Variables pour les widgets de la vue
-	EditText inputNumTel;
+	EditText inputNumPseudo;
 	EditText inputMdp;
 	ImageButton buttonConnection;
 
@@ -28,42 +28,43 @@ public class ConnectionActivity extends Activity
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_connection);
 		
-		inputNumTel = (EditText) findViewById(R.id.inputNumTelConnection);
+		inputNumPseudo = (EditText) findViewById(R.id.loginNum);
 		inputMdp = (EditText) findViewById(R.id.inputMdpConnection);
 		buttonConnection = (ImageButton) findViewById(R.id.buttonValidateConnection);
 	}
 	
 	public void validerConnexion(View view) throws Exception
-	{		
-		String numTel = inputNumTel.getText().toString();
+	{
+		Utilisateur utilisateurCourant = null;
+		
+		String numPseudo = inputNumPseudo.getText().toString().trim();
 		String mdp = inputMdp.getText().toString();
 		
 		String telPattern = "^((\\+|00)33\\s?|0)[679](\\s?\\d{2}){4}$";
 		
 		// Verifications
-		// Numero de telephone absent
-		if(numTel.isEmpty())
+		// Numero de telephone ou pseudo absent
+		if(numPseudo.isEmpty())
 		{
-			Toast.makeText(getBaseContext(), "Numéro de téléphone manquant!", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), "Numéro de téléphone ou pseudo manquant!", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
-		// Numero de telephone invalide
-		if(!numTel.matches(telPattern))
+		// Pas d'utilisateur avec ce pseudo ou ce num
+		if (Utilisateur.getUtilisateurWithAttribut("numTel", numPseudo).isEmpty() && Utilisateur.getUtilisateurWithAttribut("pseudo", numPseudo).isEmpty()) 
 		{
-			Toast.makeText(getBaseContext(), "Numéro de téléphone invalide! Veuillez entrer un numéro mobile valable.", Toast.LENGTH_SHORT).show();
+			Toast.makeText(getBaseContext(), "Pas d'utilisateur avec ce numéro ou pseudo!", Toast.LENGTH_SHORT).show();
 			return;
 		}
 		
-		// Pas d'utilisateur avec ce numero dans la base
-		if(Utilisateur.getUtilisateurWithAttribut("numTel", numTel).isEmpty())
-		{
-			Toast.makeText(getBaseContext(), "Aucun utilisateur lié à ce numéro de téléphone dans la base!", Toast.LENGTH_SHORT).show();
-			return;
-		}
+		Log.d(TAG, "L'utilisateur indiqué est bien dans la base.");
 		
-		// Il y a bien un utilisateur avec le numero indique, on le recupere 
-		Utilisateur utilisateurCourant = (Utilisateur) Utilisateur.getUtilisateurWithAttribut("numTel", numTel).get(0);
+		// On recupere l'utilisateur avec le num ou l'alias indique
+		if (!Utilisateur.getUtilisateurWithAttribut("numTel", numPseudo).isEmpty())
+			utilisateurCourant = (Utilisateur) Utilisateur.getUtilisateurWithAttribut("numTel", numPseudo).get(0);
+
+		if (!Utilisateur.getUtilisateurWithAttribut("pseudo", numPseudo).isEmpty())
+			utilisateurCourant = (Utilisateur) Utilisateur.getUtilisateurWithAttribut("pseudo", numPseudo).get(0);
 		
 		// Mot de passe absent
 		if(mdp.isEmpty())
