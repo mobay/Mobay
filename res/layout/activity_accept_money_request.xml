@@ -20,6 +20,18 @@
         android:text="@string/deco"
         android:textColor="@color/txtColor" />
 
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="54dp"
+        android:text="Accepter une demande d&apos;argent" 
+         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor"
+        android:textSize="32sp"/>
+
     <ListView
         android:id="@+id/listMoneyRequestView"
         android:layout_width="wrap_content"
@@ -39,17 +51,5 @@
         android:background="@xml/rounded_green"
         android:text="Menu d&apos;accueil"
         android:textColor="@color/txtColor" />
-
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/deconnexion"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="38dp"
-        android:text="Accepter une demande d&apos;argent"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/txtColor"
-        android:textSize="32sp" />
 
 </RelativeLayout>

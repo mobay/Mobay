@@ -9,63 +9,25 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="36dp"
-        android:gravity="center"
         android:text="Envoyer de l&apos;argent"
+        android:gravity="center"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/txtColor"
         android:textSize="32sp" />
-
-    <Button
-        android:id="@+id/deconnexion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="25dp"
-        android:layout_weight="1"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:text="@string/deco"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/menuAccueil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/deconnexion"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:text="Menu d&apos;accueil"
-        android:textColor="@color/txtColor" />
-
-    <TextView
-        android:id="@+id/textNumMobile"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/numOrAlias"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="60dp"
-        android:text="Num. Mobile ou Alias"
-        android:textColor="@color/txtColor" />
 
     <EditText
         android:id="@+id/numOrAlias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/montant"
-        android:layout_alignBottom="@+id/montant"
+        android:layout_above="@+id/valider"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
+        android:layout_marginBottom="15dp"
+        android:layout_marginLeft="24dp"
         android:ems="10"
         android:gravity="center"
         android:hint="XX XX XX XX XX"
@@ -75,12 +37,55 @@
         android:width="150dp" />
 
     <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/deconnexion"
+        android:layout_alignBottom="@+id/deconnexion"
+        android:layout_alignLeft="@+id/numOrAlias"
+        android:background="@xml/rounded_green"
+        android:text="Menu d&apos;accueil"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="146dp"
+        android:layout_toRightOf="@+id/numOrAlias"
+        android:layout_weight="1"
+        android:background="@xml/rounded_green"
+        android:text="@string/deco"
+        android:textColor="@color/txtColor" />
+
+    <TextView
+        android:id="@+id/textMontant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/numOrAlias"
+        android:layout_alignRight="@+id/deconnexion"
+        android:layout_marginBottom="20dp"
+        android:text="Montant"
+        android:textColor="@color/txtColor" />
+
+    <TextView
+        android:id="@+id/textNumMobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/textMontant"
+        android:layout_alignBottom="@+id/textMontant"
+        android:layout_alignLeft="@+id/numOrAlias"
+        android:text="Num. Mobile ou Alias"
+        android:textColor="@color/txtColor" />
+
+    <Button
         android:id="@+id/valider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/menuAccueil"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="48dp"
+        android:layout_marginBottom="58dp"
         android:layout_weight="1"
         android:background="@xml/rounded_green"
         android:minHeight="20dp"
@@ -92,29 +97,15 @@
         android:id="@+id/montant"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/textMontant"
-        android:layout_marginRight="18dp"
-        android:layout_marginTop="37dp"
+        android:layout_alignBaseline="@+id/numOrAlias"
+        android:layout_alignBottom="@+id/numOrAlias"
+        android:layout_alignRight="@+id/textMontant"
         android:ems="10"
         android:gravity="center"
         android:hint="00.00"
         android:inputType="numberDecimal"
         android:textColor="@color/txtColor"
         android:textColorHint="@color/greenColor"
-        android:width="100dp" >
-
-        <requestFocus />
-    </EditText>
-
-    <TextView
-        android:id="@+id/textMontant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textNumMobile"
-        android:layout_alignBottom="@+id/textNumMobile"
-        android:layout_alignRight="@+id/valider"
-        android:text="Montant"
-        android:textColor="@color/txtColor" />
+        android:width="100dp" />
 
 </RelativeLayout>

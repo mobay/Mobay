@@ -9,113 +9,105 @@
     tools:context="${relativePackage}.${activityClass}" >
 
     <TextView
-        android:id="@+id/textView1"
-        android:layout_width="match_parent"
+        android:id="@+id/textMontant"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="26dp"
+        android:layout_above="@+id/numOrAlias"
+        android:layout_alignLeft="@+id/montant"
+        android:layout_marginBottom="18dp"
         android:gravity="center"
-        android:text="Demander de l&apos;argent"
-        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Montant"
         android:textColor="@color/txtColor" />
+
+    <EditText
+        android:id="@+id/montant"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/textMontant"
+        android:gravity="center"
+        android:hint="00.00"
+        android:inputType="numberDecimal"
+        android:textColor="@color/txtColor"
+        android:textColorHint="@color/greenColor"
+        android:width="100dp" />
 
     <TextView
         android:id="@+id/textNumMobile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginLeft="24dp"
-        android:layout_marginTop="67dp"
+        android:layout_alignBaseline="@+id/textMontant"
+        android:layout_alignBottom="@+id/textMontant"
+        android:layout_toLeftOf="@+id/deconnexion"
         android:gravity="center"
         android:text="Num. Mobile ou Alias"
+        android:textColor="@color/txtColor" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textMontant"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="49dp"
+        android:gravity="center"
+        android:text="Demander de l&apos;argent"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:textColor="@color/txtColor" />
 
     <EditText
         android:id="@+id/numOrAlias"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/valider"
         android:layout_alignLeft="@+id/textNumMobile"
-        android:layout_below="@+id/textNumMobile"
-        android:layout_marginTop="23dp"
+        android:layout_marginBottom="28dp"
         android:ems="10"
         android:gravity="center"
         android:hint="XX XX XX XX XX"
         android:inputType="text"
         android:textColor="@color/txtColor"
         android:textColorHint="@color/greenColor"
-        android:width="150dp" />
-
-    <EditText
-        android:id="@+id/montant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/numOrAlias"
-        android:layout_alignBottom="@+id/numOrAlias"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="16dp"
-        android:ems="10"
-        android:gravity="center"
-        android:hint="00.00"
-        android:inputType="numberDecimal"
-        android:textColor="@color/txtColor"
-        android:textColorHint="@color/greenColor"
-        android:width="100dp" >
-
-        <requestFocus />
+        android:width="150dp" >
     </EditText>
-
-    <Button
-        android:id="@+id/menuAccueil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/deconnexion"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="32dp"
-        android:layout_weight="1"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:text="Menu d&apos;accueil"
-        android:textColor="@color/txtColor" />
 
     <Button
         android:id="@+id/deconnexion"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="33dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginBottom="128dp"
+        android:layout_marginRight="28dp"
         android:layout_weight="1"
         android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
         android:text="@string/deco"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/deconnexion"
+        android:layout_alignBottom="@+id/deconnexion"
+        android:layout_alignRight="@+id/textNumMobile"
+        android:layout_marginRight="14dp"
+        android:layout_weight="1"
+        android:background="@xml/rounded_green"
+        android:text="Menu d&apos;accueil"
         android:textColor="@color/txtColor" />
 
     <Button
         android:id="@+id/valider"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/menuAccueil"
-        android:layout_centerVertical="true"
+        android:layout_above="@+id/deconnexion"
+        android:layout_alignLeft="@+id/numOrAlias"
+        android:layout_marginBottom="36dp"
         android:layout_weight="1"
         android:background="@xml/rounded_green"
         android:minHeight="20dp"
         android:minWidth="235dp"
         android:text="Valider"
-        android:textColor="@color/txtColor" />
-
-    <TextView
-        android:id="@+id/textMontant"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/textNumMobile"
-        android:layout_alignBottom="@+id/textNumMobile"
-        android:layout_alignRight="@+id/valider"
-        android:gravity="center"
-        android:text="Montant"
         android:textColor="@color/txtColor" />
 
 </RelativeLayout>

@@ -30,6 +30,41 @@
         android:text="Veuillez spécifier le montant du virement : "
         android:textColor="@color/txtColor" />
 
+    <Button
+        android:id="@+id/valider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/deconnexion"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="86dp"
+        android:background="@xml/rounded_green"
+        android:minHeight="20dp"
+        android:minWidth="235dp"
+        android:text="Valider"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/menuAccueil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/deconnexion"
+        android:layout_alignBottom="@+id/deconnexion"
+        android:layout_alignLeft="@+id/textView2"
+        android:background="@xml/rounded_green"
+        android:text="Menu d&apos;accueil"
+        android:textColor="@color/txtColor" />
+
+    <Button
+        android:id="@+id/deconnexion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_marginBottom="54dp"
+        android:background="@xml/rounded_green"
+        android:text="@string/deco"
+        android:textColor="@color/txtColor" />
+
     <EditText
         android:id="@+id/montant"
         android:layout_width="wrap_content"
@@ -46,44 +81,5 @@
 
         <requestFocus />
     </EditText>
-
-    <Button
-        android:id="@+id/valider"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/montant"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:text="Valider"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/deconnexion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="18dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:text="@string/deco"
-        android:textColor="@color/txtColor" />
-
-    <Button
-        android:id="@+id/menuAccueil"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/deconnexion"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="27dp"
-        android:background="@xml/rounded_green"
-        android:minHeight="20dp"
-        android:minWidth="235dp"
-        android:text="Menu d&apos;accueil"
-        android:textColor="@color/txtColor" />
 
 </RelativeLayout>
