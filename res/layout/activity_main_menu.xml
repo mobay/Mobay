@@ -64,7 +64,7 @@
         android:textColor="@color/txtColor" />
 
     <Button
-        android:id="@+id/buttonInsciption"
+        android:id="@+id/buttonHistorique"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/buttonDemandeArgentMenu"
@@ -99,7 +99,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBaseline="@+id/buttonGererIdentifiantsMenu"
         android:layout_alignBottom="@+id/buttonGererIdentifiantsMenu"
-        android:layout_alignLeft="@+id/buttonInsciption"
+        android:layout_alignLeft="@+id/buttonHistorique"
         android:background="@xml/rounded_green"
         android:drawableLeft="@drawable/coopter"
         android:minHeight="20dp"

@@ -34,7 +34,9 @@
     <string name="title_activity_ids">IDsActivity</string>
     <string name="modifierMdp">Modifier mon mot de passe</string>
     <string name="modifierPseudo">Modifier mon pseudo</string>
+    <string name="setParrain">Définir Parrain</string>	
     <string name="pseudoBrut">Pseudonyme</string>
+    <string name="coopterThisAmi">Coopter cet ami!</string>
     <string name="nouveauMdp">Nouveau mot de passe</string>
     <string name="nouveauMdpAgain">Répéter le nouveau mot de passe</string>
     <string name="mdpActuel">Mot de passe actuel</string>
@@ -52,8 +54,8 @@
     <string name="title_activity_manage_account_reload_validation">Recharger Validation</string>
     <string name="title_activity_manage_account_transfer">Gérer Mon Compte - Virer</string>
     <string name="title_activity_manage_account_transfer_ok">Virement effectué</string>
-    
-    
+    <string name="title_activity_historic">Consulter l\'historique</string>
+    <string name="title_activity_friend">Coopter un ami</string>
     <color name="backgroundColor">#339c3c</color>
     <color name="greenColor">#8bc34a</color>
     <color name="txtColor">#ffffff</color>

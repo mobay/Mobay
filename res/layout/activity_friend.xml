@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context="${relativePackage}.${activityClass}" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="18dp"
+        android:text="@string/coopterAmi"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/txtColor" />
+
+    <EditText
+        android:id="@+id/editTextModifyPseudo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="140dp"
+        android:ems="10"
+        android:hint="@string/pseudoBrut"
+        android:textColor="@color/txtColor"
+        android:textColorHint="@color/greenColor" />
+
+    <Button
+        android:id="@+id/buttonSetParrain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/editTextModifyPseudo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp"
+        android:background="@xml/rounded_green"
+        android:minWidth="230dip"
+        android:onClick="setParrain"
+        android:text="@string/coopterThisAmi"
+        android:textColor="@color/txtColor" />
+
+</RelativeLayout>

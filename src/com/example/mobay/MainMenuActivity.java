@@ -51,7 +51,8 @@ public class MainMenuActivity extends Activity
 	
 	public void historique(View v)
 	{
-		
+		Intent viewHistoric = new Intent(this,HistoricActivity.class);
+		startActivity(viewHistoric);
 	}
 	
 	public void gererIdentifiants(View v)
@@ -62,7 +63,8 @@ public class MainMenuActivity extends Activity
 	
 	public void coopterAmi(View v)
 	{
-		
+		Intent intentFriend = new Intent(this, FriendActivity.class);
+		startActivity(intentFriend);
 	}
 	
 	public void aide(View v)

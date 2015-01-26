@@ -12,7 +12,7 @@
         android:id="@+id/buttonConnection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/buttonInsciption"
+        android:layout_below="@+id/buttonHistorique"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="36dp"
         android:background="@xml/rounded_green"
@@ -44,7 +44,7 @@
         android:src="@drawable/mobay" />
 
     <Button
-        android:id="@+id/buttonInsciption"
+        android:id="@+id/buttonHistorique"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/buttonConnection"

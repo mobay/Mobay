@@ -129,6 +129,7 @@
             android:name=".ManageAccountReloadActivity"
             android:label="@string/title_activity_manage_account_reload" >
         </activity>
+        
         <activity
             android:name=".ManageAccountReloadValidationActivity"
             android:label="@string/title_activity_manage_account_reload_validation" >
@@ -145,6 +146,15 @@
             android:name=".ManageAccountTransferOkActivity"
             android:label="@string/title_activity_manage_account_transfer_ok" >
         </activity>
+        <activity
+            android:name=".FriendActivity"
+            android:label="@string/title_activity_friend" >
+        </activity>
+        <activity
+            android:name=".HistoricActivity"
+            android:label="@string/title_activity_historic" >
+        </activity>
+        
     </application>
 
 </manifest>

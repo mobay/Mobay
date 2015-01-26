@@ -39,7 +39,7 @@ public class IDsActivity extends Activity
 		inputCurrentMdp = (EditText) findViewById(R.id.editTextCurrentMdp);
 		inputNewMdp = (EditText) findViewById(R.id.editTextNewMdp);
 		inputNewMdpAgain = (EditText) findViewById(R.id.editTextNewMdpAgain);
-		buttonModifyMdp = (Button) findViewById(R.id.buttonModifyMdp);
+		buttonModifyMdp = (Button) findViewById(R.id.buttonCoopterAmi);
 		
 		// Si l'utilisateur courant a deja un identifiant, on le rappelle
 		if(!Mobay.utilisateurCourant.getPseudo().isEmpty())

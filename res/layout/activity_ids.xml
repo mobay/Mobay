@@ -9,7 +9,7 @@
         android:id="@+id/editTextNewMdpAgain"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/buttonModifyMdp"
+        android:layout_above="@+id/buttonCoopterAmi"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:ems="10"
@@ -35,7 +35,7 @@
     </EditText>
 
     <Button
-        android:id="@+id/buttonModifyMdp"
+        android:id="@+id/buttonCoopterAmi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
