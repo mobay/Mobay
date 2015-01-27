@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-import android.app.DownloadManager.Query;
 import android.util.Log;
 
 import com.parse.*;
@@ -77,7 +76,7 @@ public class Operation extends ParseObject {
 		put("date", date);
 	}
 
-	// Liste les operations non validés d'un certain type par destinatireObject
+	// Liste les operations non validées d'un certain type par destinataireObject
 	public static List<ParseObject> getOperationWithDestinaireObjectIdAndOperationType(String objectId, int reception, boolean validationOperation) {
 		List<ParseObject> listOperation = new ArrayList<ParseObject>();
 
